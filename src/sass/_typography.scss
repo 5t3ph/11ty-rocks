@@ -2,37 +2,26 @@ h1,
 h2,
 h3 {
   font-family: $tdbc-headline-font-family;
+  line-height: calc(2px + 2ex + 2px);
+  margin-bottom: 0.65em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-// Recommended starting point
-$type-base-size: $tdbc-text-font-size;
-// Select by key of map, or use a custom value
-$type-size-ratio: 1.414;
-// List in descending order to prevent extra sort function
-$type-levels: 4, 3, 2, 1;
-
-$type-styles: ();
-$level-size: $type-base-size;
-@each $level in $type-levels {
-  $level-size: $level-size * $type-size-ratio;
-  $type-styles: map-merge(
-    $type-styles,
-    (
-      "h#{$level}": $level-size,
-    )
-  );
-
-  // Output heading styles
-  // Assign to element and create utility class
-  h#{$level} {
-    font-size: $level-size;
-    line-height: calc(2px + 2ex + 2px);
-    margin-bottom: 0.65em;
-  }
-}
+$tdbc-type-styles: (
+  h1: 4rem,
+  h2: 2.5rem,
+  h3: 2rem,
+);
 
 @function tdbc-type-size($key) {
   @return map-get($type-styles, $key);
+}
+
+@each $level, $size in $tdbc-type-styles {
+  #{$level} {
+    font-size: $size;
+  }
 }
 
 p,
