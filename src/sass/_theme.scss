@@ -1,13 +1,15 @@
-$tdbc-color-primary: #171392 !default;
-$tdbc-color-secondary: #db0a76 !default;
-$tdbc-color-background: #f9f9f9;
+$tdbc-color-primary: #5ce1e6 !default;
+$tdbc-color-secondary: #dc66d4 !default;
+$tdbc-color-support: #ef8443 !default;
+$tdbc-color-background: mix($tdbc-color-primary, #fff, 40%);
 
 $tdbc-brand-colors: (
   "primary": $tdbc-color-primary,
   "secondary": $tdbc-color-secondary,
+  "support": $tdbc-color-support,
 ) !default;
 
-$tdbc-color-body: scale-color($tdbc-color-primary, $lightness: -30%, $saturation: -50%) !default;
+$tdbc-color-body: scale-color($tdbc-color-primary, $lightness: -80%, $saturation: -20%) !default;
 $tdbc-color-gray: mix(#767676, $tdbc-color-body, 70%) !default;
 
 $tdbc-colors: map-merge(
@@ -17,7 +19,6 @@ $tdbc-colors: map-merge(
     "background": $tdbc-color-background,
     "light": #fff,
     "dark": rgba(black, 0.87),
-    "gray": $tdbc-color-gray,
   )
 );
 
@@ -26,28 +27,19 @@ $tdbc-colors: map-merge(
 }
 
 // Add/remove to selectively generate `ink` (text color) classes
-$tdbc-ink-colors: "primary", "secondary", "text", "gray", "light", "dark" !default;
+$tdbc-ink-colors: "text" !default;
 
-// Add/remove to selectively generate `background` (text color) classes
-$tdbc-background-colors: "primary", "secondary", "background", "gray", "light" !default;
+// Add/remove to selectively generate `background` classes
+$tdbc-background-colors: "secondary", "primary", "support" !default;
 
-$tdbc-button-variants: "primary", "secondary", "light", "gray" !default;
-$tdbc-link-color: tdbc-color("primary") !default;
+$tdbc-button-variants: "text" !default;
+$tdbc-link-color: #4e0069 !default;
 $tdbc-border-radius: 8px !default;
 
-$tdbc-font-family: "Baloo 2", sans-serif;
-$tdbc-strong-font-weight: 500 !default;
-$tdbc-h1-font-size: 4.2rem !default;
-$tdbc-h2-font-size: 3.15rem !default;
-$tdbc-h3-font-size: 2rem !default;
-$tdbc-h4-font-size: 1.35rem !default;
+$tdbc-headline-font-family: "Arbutus Slab", sans-serif;
+/* stylelint-disable-next-line */
+$tdbc-font-family: -apple-system, blinkmacsystemfont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto,
+  noto, segoe ui, arial, sans-serif;
+$tdbc-strong-font-weight: 600 !default;
 $tdbc-text-font-size: 1.15rem !default;
 $tdbc-lead-font-size: 1.35rem !default;
-
-$tdbc-spacing: (
-  sm: 1rem,
-  md: 3rem,
-  lg: 6rem,
-  xl: 10rem,
-  auto: "auto",
-) !default;

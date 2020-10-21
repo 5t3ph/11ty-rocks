@@ -9,10 +9,9 @@ body {
 }
 
 // stylelint-disable selector-max-type, selector-no-qualifying-type
-main,
 main.tdbc-container {
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 footer {
@@ -26,14 +25,45 @@ article {
     margin-right: auto;
     margin-left: auto;
   }
+
+  &:target {
+    box-shadow: 0 0 0 3px tdbc-color("text");
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 0.15em;
+      border-bottom: 1px dotted tdbc-color("text");
+      border-radius: $tdbc-border-radius $tdbc-border-radius 0 0;
+      background-color: rgba(tdbc-color("text"), 0.15);
+      font-style: italic;
+      font-weight: bold;
+      text-align: center;
+      content: "It's me you're looking for...";
+    }
+  }
+}
+
+aside {
+  margin-top: 10vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 // stylelint-enable
+
+.tdbc-article__icon {
+  display: block;
+  font-size: 4rem;
+  text-align: center;
+}
 
 .tdbc-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 120ch;
+  max-width: 160ch;
   margin-right: auto;
   margin-left: auto;
   padding: 1rem;
@@ -41,27 +71,9 @@ article {
 
 .tdbc-column-container {
   display: grid;
-  grid-gap: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
-}
-
-// stylelint-disable-next-line selector-no-qualifying-type, selector-max-type
-ul.tdbc-column-container {
-  padding-left: 0;
-}
-
-.tdbc-section {
-  width: 100%;
-
-  &--padded {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-  }
-
-  // stylelint-disable-next-line selector-max-universal
-  *:last-child {
-    margin-bottom: 0;
-  }
+  align-items: start;
+  grid-gap: 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(38ch, 1fr));
 }
 
 .tdbc-hero {
@@ -71,6 +83,16 @@ ul.tdbc-column-container {
   padding-top: 10vh;
   padding-bottom: 10vh;
   text-align: center;
+
+  // stylelint-disable selector-max-universal
+  > * {
+    padding: 1rem;
+    background-color: tdbc-color(primary);
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .tdbc-row {
@@ -83,17 +105,6 @@ ul.tdbc-column-container {
   }
 
   &--center-content {
-    justify-content: center;
+    justify-items: center;
   }
-
-  &--center-alignitems {
-    align-items: center;
-  }
-}
-
-// stylelint-disable-next-line selector-max-type
-hr {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  border: 1px solid tdbc-color("secondary");
 }

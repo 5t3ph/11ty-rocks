@@ -1,48 +1,45 @@
 {
-  "name": "11ty-netlify-jumpstart",
-  "version": "0.4.1",
+  "name": "11ty-rocks",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss": "sass src/sass:src/css",
-    "css": "postcss src/css/*.css -u autoprefixer cssnano -r -m",
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
-    "watch:sass": "sass --watch src/sass:src/css",
-    "start": "cross-env ELEVENTY_ENV=dev npm-run-all scss --parallel watch:*",
-    "build": "cross-env ELEVENTY_ENV=prod npm-run-all scss --parallel build:eleventy css screenshot",
+    "build:sass": "sass  --no-source-map src/sass:public/css",
     "build:eleventy": "eleventy",
-    "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r -m",
+    "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
+    "build": "cross-env ELEVENTY_ENV=prod npm-run-all --parallel build:*",
     "lint:fix": "stylelint --fix 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
-    "screenshot": "node functions/images.js",
+    "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "bump": "npm --no-git-tag-version version"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/5t3ph/11ty-netlify-jumpstart.git"
+    "url": "git+https://github.com/5t3ph/11ty-rocks.git"
   },
   "keywords": [],
   "author": "5t3ph",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/5t3ph/11ty-netlify-jumpstart/issues"
+    "url": "https://github.com/5t3ph/11ty-rocks/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
     "autoprefixer": "^9.8.6",
     "cross-env": "^7.0.2",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
-    "emoji-regex": "^9.0.0",
-    "luxon": "^1.25.0",
-    "markdown-it": "^11.0.0",
-    "markdown-it-anchor": "^5.2.7",
+    "emoji-regex": "^9.1.1",
+    "markdown-it": "^12.0.0",
+    "markdown-it-anchor": "^6.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.2",
-    "puppeteer": "5.2.1",
-    "sass": "^1.26.10",
-    "stylelint": "^13.7.0",
+    "postcss-cli": "^8.1.0",
+    "sass": "^1.27.0",
+    "stylelint": "^13.7.2",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
@@ -51,9 +48,5 @@
   },
   "browserslist": [
     "last 2 versions"
-  ],
-  "dependencies": {
-    "chrome-aws-lambda": "5.2.1",
-    "puppeteer-core": "5.2.1"
-  }
+  ]
 }

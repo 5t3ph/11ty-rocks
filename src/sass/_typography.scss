@@ -1,38 +1,38 @@
-$tdbc-typography-variants: h1, h2, h3, h4;
+h1,
+h2,
+h3 {
+  font-family: $tdbc-headline-font-family;
+}
 
-@each $type in $tdbc-typography-variants {
-  #{$type},
-  .tdbc-#{$type} {
-    font-weight: $tdbc-strong-font-weight;
-    line-height: 1.15;
+// Recommended starting point
+$type-base-size: $tdbc-text-font-size;
+// Select by key of map, or use a custom value
+$type-size-ratio: 1.414;
+// List in descending order to prevent extra sort function
+$type-levels: 4, 3, 2, 1;
+
+$type-styles: ();
+$level-size: $type-base-size;
+@each $level in $type-levels {
+  $level-size: $level-size * $type-size-ratio;
+  $type-styles: map-merge(
+    $type-styles,
+    (
+      "h#{$level}": $level-size,
+    )
+  );
+
+  // Output heading styles
+  // Assign to element and create utility class
+  h#{$level} {
+    font-size: $level-size;
+    line-height: calc(2px + 2ex + 2px);
     margin-bottom: 0.65em;
   }
 }
 
-// As of v0.3.0, `clamp` not well enough supported on mobile browsers for use
-// Due to build-in min/max Sass functions, requires `unquote()` to correctly
-// render as CSS min/max
-h1,
-.tdbc-h1 {
-  font-size: $tdbc-h1-font-size;
-  font-size: unquote("min(max(3rem, 5vw), #{$tdbc-h1-font-size})");
-}
-
-h2,
-.tdbc-h2 {
-  font-size: $tdbc-h2-font-size;
-  font-size: unquote("min(max(2.5rem, 5vw), #{$tdbc-h2-font-size})");
-}
-
-h3,
-.tdbc-h3 {
-  font-size: $tdbc-h3-font-size;
-}
-
-h4,
-.tdbc-h4 {
-  font-size: $tdbc-h4-font-size;
-  color: tdbc-color("gray");
+@function tdbc-type-size($key) {
+  @return map-get($type-styles, $key);
 }
 
 p,
@@ -53,10 +53,6 @@ article {
   }
 
   * {
-    + h2 {
-      margin-top: 4rem;
-    }
-
     + h3 {
       margin-top: 2rem;
     }
@@ -67,18 +63,53 @@ strong {
   font-weight: $tdbc-strong-font-weight;
 }
 
-a:not(.tdbc-button) {
+a:not([class*="button"]) {
   color: $tdbc-link-color;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 0.08em;
+    background-color: currentColor;
+    opacity: 0.65;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 180ms ease-in;
+  }
+
+  &:focus:before,
+  &:hover:before {
+    height: 0.35em;
+    opacity: 0.25;
+    bottom: 0.08em;
+  }
+
+  &:focus {
+    outline: 2px solid transparent;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -0.15em;
+      right: -0.15em;
+      bottom: 0;
+      left: -0.15em;
+      border-radius: 0.15em;
+      box-shadow: 0 0 0 2px currentColor;
+    }
+  }
 }
 
 code:not([class*="language"]) {
   display: inline-flex;
   padding: 0.15em;
-  background-color: tdbc-color("light");
-  color: tdbc-color("gray");
+  background-color: rgba(tdbc-color("light"), 0.5);
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  border: 1px solid scale-color(tdbc-color("gray"), $lightness: 50%);
-  border-radius: 2px;
   font-size: 0.75em;
   line-height: 1.1;
 }
@@ -89,31 +120,9 @@ pre code:not([class*="language"]) {
   overflow-x: auto;
 }
 
-blockquote {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 1.5rem;
-  border-left: 2px solid tdbc-color("secondary");
-  color: tdbc-color("gray");
-
-  &,
-  p {
-    font-size: $tdbc-h4-font-size;
-  }
-
-  + * {
-    margin-top: 3rem;
-  }
-}
-
 .tdbc-lead {
   font-size: $tdbc-lead-font-size;
   letter-spacing: 0.01em;
   margin-bottom: 1em;
   line-height: 1.3;
-}
-
-.tdbc-list-unstyled {
-  list-style: none;
-  padding: 0;
 }
