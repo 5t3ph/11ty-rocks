@@ -8,4 +8,4 @@ Generated from [11ty-netlify-jumpstart.netlify.app](https://11ty-netlify-jumpsta
 
 ## Join or Use the Webring
 
-[Read the full details >]()
+[Read the full details >](https://github.com/5t3ph/11ty-rocks/blob/main/join-webring.md)
