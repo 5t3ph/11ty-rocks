@@ -86,7 +86,7 @@ export class EleventyWebring extends HTMLElement {
   <h2 class="eleventywr-title">11ty Webring</h2>
   <p>Enjoy more projects from the 11ty community!</p>
   <ul role="list" class="eleventywr-list"></ul>
-  <a target="_blank" rel=”noopener noreferrer” href="https://github.com/5t3ph/11ty-rocks/join-webring.md" class="eleventywr-join">Join this Webring</a>
+  <a target="_blank" rel=”noopener noreferrer” href="https://github.com/5t3ph/11ty-rocks/blob/main/join-webring.md" class="eleventywr-join">Join this Webring</a>
 </aside>
     `;
     const list = shadowRoot.querySelector(".eleventywr-list");
