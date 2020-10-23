@@ -108,3 +108,10 @@ aside {
     justify-items: center;
   }
 }
+
+// stylelint-disable
+eleventy-webring {
+  --eleventywr-link-color: #{$tdbc-link-color};
+
+  padding-bottom: 10vh;
+}

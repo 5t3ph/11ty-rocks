@@ -1,0 +1,30 @@
+[
+  {
+    "title": "11ty.Rocks",
+    "link": "https://11ty.rocks"
+  },
+  {
+    "title": "11ty.Recipes",
+    "link": "https://11ty.recipes"
+  },
+  {
+    "title": "create-eleventy-site",
+    "link": "https://github.com/bjankord/create-eleventy-site/"
+  },
+  {
+    "title": "Learn Eleventy From Scratch",
+    "link": "https://piccalil.li/course/learn-eleventy-from-scratch/"
+  },
+  {
+    "title": "Plug11ty",
+    "link": "https://plug11ty.com/"
+  },
+  {
+    "title": "Brian Robinson's 11ty Posts",
+    "link": "https://bryanlrobinson.com/blog/category/11ty"
+  },
+  {
+    "title": "Beginner's Guide to 11ty",
+    "link": "https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/"
+  }
+]
