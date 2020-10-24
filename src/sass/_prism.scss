@@ -30,7 +30,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: tdbc-color("light");
+  background: rgba(tdbc-color("light"), 0.5);
 }
 
 /* Inline code */

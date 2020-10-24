@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+
+<header class="tdbc-hero tdbc-background--texture tdbc-background--primary">
+  <div class="tdbc-content-maxlength">
+    <h1>{{ title }}</h1>
+    {%- if description %}
+    <p class="tdbc-lead">{{ description }}</p>
+    {% endif -%}
+    <small class="tdbc-meta"><em>Posted on</em>: {{ page.date | postDate }}<br>{{ content | emojiReadTime }}</small>
+  </div>
+</header>
+<main class="tdbc-container">
+  <article class="tdbc-mx-auto">
+    {{ content | safe }}
+  </article>
+</main>

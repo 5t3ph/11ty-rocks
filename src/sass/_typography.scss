@@ -115,3 +115,19 @@ pre code:not([class*="language"]) {
   margin-bottom: 1em;
   line-height: 1.3;
 }
+
+.tdbc-meta {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+blockquote {
+  margin: 2rem 0;
+  padding-left: 1rem;
+  border-left: 2px dotted tdbc-color("secondary");
+  color: scale-color(tdbc-color(secondary), $lightness: -25%);
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}

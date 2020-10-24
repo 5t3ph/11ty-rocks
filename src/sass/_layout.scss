@@ -109,6 +109,27 @@ aside {
   }
 }
 
+.tdbc-video {
+  position: relative;
+  height: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 56.25%;
+  border-radius: 7px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.27);
+  overflow: hidden;
+
+  // stylelint-disable-next-line
+  iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 // stylelint-disable
 eleventy-webring {
   --eleventywr-link-color: #{$tdbc-link-color};
