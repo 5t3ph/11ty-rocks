@@ -2,6 +2,7 @@ const emojiRegex = require("emoji-regex");
 const slugify = require("slugify");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -40,6 +41,14 @@ module.exports = function (eleventyConfig) {
     title = title.replace(/"(.*)"/g, '\\"$1\\"');
     return title;
   });
+
+  eleventyConfig.addCollection("orderedResources", function (collection) {
+    return collection.getFilteredByTag("resources").sort((a, b) => {
+      return a.data.order - b.data.order;
+    });
+  });
+
+  eleventyConfig.addPlugin(emojiReadTime);
 
   return {
     passthroughFileCopy: true,

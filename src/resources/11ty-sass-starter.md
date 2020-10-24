@@ -4,6 +4,7 @@ icon: 💀
 link: https://github.com/5t3ph/11ty-sass-skeleton
 linkText: Get the Starter
 category: starter
+order: 3
 ---
 
 Featuring absolutely nothing beyond a base HTML5 template and the essential setup to watch and compile your Sass alongside 11ty.
