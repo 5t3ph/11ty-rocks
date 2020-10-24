@@ -18,7 +18,7 @@ layout: base.njk
 </aside>
 <main class="tdbc-container tdbc-mx-auto">
   <div class="tdbc-column-container">
-    {%- for resource in collections.resources %}
+    {%- for resource in collections.orderedResources %}
     <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
       <div class="tdbc-card__content">
         <span class="tdbc-article__icon">{{ resource.data.icon }}</span>
