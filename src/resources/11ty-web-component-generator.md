@@ -4,6 +4,7 @@ icon: ⚡️
 link: https://11ty-web-component-generator.netlify.app/
 linkText: Demo the Generator
 category: misc
+order: 5
 ---
 
 Eleventy makes it possible to mix templating languages. More importantly to this generator is that we can customize the output file type and composite a file from includes.

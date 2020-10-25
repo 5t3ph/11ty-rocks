@@ -13,15 +13,15 @@ layout: base.njk
     </p>
   </div>
 </header>
-<aside class="tdbc-content-maxlength tdbc-mx-auto">
+<aside aria-label="Intro to Eleventy (11ty)" class="tdbc-content-maxlength tdbc-mx-auto">
   {{ content | safe }}
 </aside>
 <main class="tdbc-container tdbc-mx-auto">
   <div class="tdbc-column-container">
-    {%- for resource in collections.resources %}
+    {%- for resource in collections.orderedResources %}
     <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
       <div class="tdbc-card__content">
-        <span class="tdbc-article__icon">{{ resource.data.icon }}</span>
+        <span class="tdbc-article__icon" aria-hidden="true">{{ resource.data.icon }}</span>
         <h2>{{ resource.data.title }}</h2>
         {{ resource.templateContent | safe }}
         <a href="{{ resource.data.link }}" class="tdbc-button tdbc-button--text">{{ resource.data.linkText }}</a>

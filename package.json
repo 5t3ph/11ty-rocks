@@ -48,5 +48,8 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.0"
+  }
 }
