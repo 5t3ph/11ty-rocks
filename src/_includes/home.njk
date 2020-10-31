@@ -16,7 +16,7 @@ layout: base.njk
 <aside aria-label="Intro to Eleventy (11ty)" class="tdbc-content-maxlength tdbc-mx-auto">
   {{ content | safe }}
 </aside>
-<main id="main" class="tdbc-container tdbc-mx-auto">
+<main id="main" tabindex="-1" class="tdbc-container tdbc-mx-auto">
 {# Add latest post article #}
 {%- for post in collections.posts | head(-1) %}
 <article id="{{ post.data.title | slug }}" class="tdbc-card tdbc-background--light tdbc-background--texture tdbc-mx-auto tdbc-latest">

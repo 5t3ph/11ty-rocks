@@ -8,7 +8,7 @@ layout: base.njk
     <p class="tdbc-lead">Articles and tutorials exclusive to 11ty Rocks!</p>
   </div>
 </header>
-<main id="main" class="tdbc-container tdbc-content-maxlength tdbc-mx-auto">
+<main id="main" tabindex="-1" class="tdbc-container tdbc-content-maxlength tdbc-mx-auto">
   {%- for post in collections.posts %}
     <article id="{{ post.data.title | slug }}">
         <h2>{{ post.data.title }}</h2>
