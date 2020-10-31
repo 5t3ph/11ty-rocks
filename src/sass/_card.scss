@@ -38,13 +38,11 @@
     // stylelint-enable
   }
 
-  $tdbc-card-background-colors: append($tdbc-background-colors, "light");
+  $bg-length: length($tdbc-background-colors);
 
-  $bg-length: length($tdbc-card-background-colors);
-
-  @each $key in $tdbc-card-background-colors {
+  @each $key in $tdbc-background-colors {
     $index: index(
-      $list: $tdbc-card-background-colors,
+      $list: $tdbc-background-colors,
       $value: $key,
     );
 
