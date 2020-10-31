@@ -26,6 +26,10 @@ article {
     margin-left: auto;
   }
 
+  + h2 {
+    margin-top: 10vh;
+  }
+
   &:target {
     box-shadow: 0 0 0 3px tdbc-color("text");
 
@@ -43,6 +47,10 @@ article {
       text-align: center;
       content: "It's me you're looking for...";
     }
+  }
+
+  * + h2 {
+    margin-top: 3rem;
   }
 }
 
@@ -106,6 +114,68 @@ aside {
 
   &--center-content {
     justify-items: center;
+  }
+}
+
+.tdbc-video {
+  position: relative;
+  height: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 56.25%;
+  border-radius: 7px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.27);
+  overflow: hidden;
+
+  // stylelint-disable-next-line
+  iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.tdbc-skip-link {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  background-color: tdbc-color("text");
+  color: #fff !important;
+  font-size: 1.125rem;
+  overflow: hidden;
+
+  &:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 0.5em;
+  }
+}
+
+.tdbc-latest {
+  position: relative;
+  padding-top: 2em;
+  padding-bottom: 1.5em;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.15em 3em;
+    transform: rotate(-33deg) translateX(-2.5em);
+    background-color: tdbc-color("primary");
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    content: "Latest Post";
   }
 }
 

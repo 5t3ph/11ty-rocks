@@ -1,7 +1,10 @@
 const emojiRegex = require("emoji-regex");
 const slugify = require("slugify");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { DateTime } = require("luxon");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 
 module.exports = function (eleventyConfig) {
@@ -42,6 +45,29 @@ module.exports = function (eleventyConfig) {
     return title;
   });
 
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {
+      zone: "America/Chicago",
+    }).toLocaleString(DateTime.DATE_MED);
+  });
+
+  eleventyConfig.addFilter("excerpt", (post) => {
+    const content = post.replace(/(<([^>]+)>)/gi, "");
+    return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+  });
+
+  eleventyConfig.addFilter("stripFilename", (file) => {
+    return file.replace(/\.[^/.]+$/, "");
+  });
+
+  eleventyConfig.addFilter("head", (array, n) => {
+    if (n < 0) {
+      return array.slice(n);
+    }
+
+    return array.slice(0, n);
+  });
+
   eleventyConfig.addCollection("orderedResources", function (collection) {
     return collection.getFilteredByTag("resources").sort((a, b) => {
       return a.data.order - b.data.order;
@@ -49,6 +75,25 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(emojiReadTime);
+
+  /* Markdown Overrides */
+  let markdownLibrary = markdownIt({
+    html: true,
+  }).use(markdownItAnchor, {
+    permalink: true,
+    permalinkClass: "tdbc-anchor",
+    permalinkSymbol: "#",
+    permalinkSpace: false,
+    permalinkBefore: true,
+    level: [1, 2],
+    slugify: (s) =>
+      s
+        .trim()
+        .toLowerCase()
+        .replace(/[\s+~\/]/g, "-")
+        .replace(/[().`,%·'"!?¿:@*]/g, ""),
+  });
+  eleventyConfig.setLibrary("md", markdownLibrary);
 
   return {
     passthroughFileCopy: true,

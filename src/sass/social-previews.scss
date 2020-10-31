@@ -1,0 +1,43 @@
+@import "theme";
+@import "reset";
+@import "typography";
+@import "layout";
+@import "utilities";
+
+@font-face {
+  font-family: "Arbutus Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arbutus Slab Regular"), local("ArbutusSlab-Regular"),
+    url("../src/fonts/arbutus-slab-v9-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+// stylelint-disable
+
+body {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-family: $tdbc-font-family;
+
+  .tdbc-container {
+    background-color: transparent !important;
+    display: block;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    background-color: tdbc-color("background");
+  }
+
+  p {
+    background-color: tdbc-color("primary");
+  }
+
+  h1,
+  p {
+    padding: 0.25em;
+    display: inline-block;
+  }
+}

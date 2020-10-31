@@ -46,7 +46,8 @@
       href="/feed/"
     />
   </head>
-  <body>
+  <body class="tdbc-layout--{{ layout | stripFilename }}">
+  <a href="#main" class="tdbc-skip-link">Skip to content</a>
     {{ content | safe }}
 
     <footer class="tdbc-background--secondary">
@@ -66,6 +67,7 @@
               </svg>
             </a>
             <a href="https://moderncss.dev" class="tdbc-ink--text" >ModernCSS.dev</a>
+            <a href="https://www.buymeacoffee.com/moderncss" class="tdbc-ink--text" >Buy Me A Coffee</a>
           </span>
         </div>
       </div>

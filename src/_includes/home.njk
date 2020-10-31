@@ -16,8 +16,26 @@ layout: base.njk
 <aside aria-label="Intro to Eleventy (11ty)" class="tdbc-content-maxlength tdbc-mx-auto">
   {{ content | safe }}
 </aside>
-<main class="tdbc-container tdbc-mx-auto">
-  <div class="tdbc-column-container">
+<main id="main" tabindex="-1" class="tdbc-container tdbc-mx-auto">
+{# Add latest post article #}
+{%- for post in collections.posts | head(-1) %}
+<article id="{{ post.data.title | slug }}" class="tdbc-card tdbc-background--light tdbc-background--texture tdbc-mx-auto tdbc-latest">
+<div class="tdbc-card__content">
+        <h2>{{ post.data.title }}</h2>
+        <small class="tdbc-meta">{{ post.templateContent | emojiReadTime }} • <em>Posted on</em>: {{ post.date | postDate }}</small>
+        {%- if post.data.description %}
+        <p>{{ post.data.description | excerpt }}</p>
+        {%- else %}
+        <p>{{ post.templateContent | excerpt }}</p>
+        {% endif -%}
+        <a href="{{ post.url }}" class="tdbc-button tdbc-button--text">Read Post</a>
+        <a href="/posts/" class="tdbc-ml">View Post Archive</a>
+</div>
+    </article>
+    {% endfor -%}
+  <h2 id="resources" class="tdbc-text-center">Resources</h2>
+  <p class="tdbc-lead tdbc-text-center">Starters, plugins, and externally hosted articles and tutorials</p>
+  <div class="tdbc-column-container tdbc-mt">
     {%- for resource in collections.orderedResources %}
     <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
       <div class="tdbc-card__content">
@@ -30,5 +48,4 @@ layout: base.njk
     {% endfor -%}
   </div>
 </main>
-<eleventy-webring current="11ty.Rocks" random="true" class="tdbc-content-maxlength tdbc-mx-auto"></eleventy-webring>
-<script type="module" src="/js/eleventy-webring.js"></script>
+{% include 'webring.njk' %}

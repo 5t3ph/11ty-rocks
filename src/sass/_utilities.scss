@@ -9,6 +9,8 @@
   opacity: 0.6;
   font-size: 0.65em;
   vertical-align: top;
+  float: left;
+  margin-left: -1.75rem;
 
   &:hover {
     opacity: 1;
@@ -31,12 +33,18 @@ $tdbc-alignments: left, center, right !default;
 
 @each $key in $tdbc-background-colors {
   .tdbc-background--#{$key} {
-    background-color: tdbc-color($key);
+    background-color: tdbc-color($key) !important;
 
     .tdbc-card__content {
       h2,
-      p {
+      p,
+      small,
+      a:not(.tdbc-button) {
         background-color: tdbc-color($key);
+      }
+
+      small + p {
+        margin-top: 0.5rem;
       }
     }
   }
@@ -64,4 +72,18 @@ $tdbc-alignments: left, center, right !default;
 
 .tdbc-mb-none {
   margin-bottom: 0;
+}
+
+.tdbc-mt {
+  margin-top: 2rem;
+}
+
+.tdbc-ml {
+  margin-left: 2rem;
+}
+
+.tdbc-list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

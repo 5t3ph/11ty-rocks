@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+{% include 'sitenav.njk' %}
+<header class="tdbc-hero tdbc-background--texture tdbc-background--primary">
+  <div class="tdbc-content-maxlength">
+    <h1>{{ title }}</h1>
+    <p class="tdbc-lead">Articles and tutorials exclusive to 11ty Rocks!</p>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="tdbc-container tdbc-content-maxlength tdbc-mx-auto">
+  {%- for post in collections.posts %}
+    <article id="{{ post.data.title | slug }}">
+        <h2>{{ post.data.title }}</h2>
+        <small class="tdbc-meta">{{ post.templateContent | emojiReadTime }} • <em>Posted on</em>: {{ post.date | postDate }}</small>
+        {%- if post.data.description %}
+        <p>{{ post.data.description }}</p>
+        {%- else %}
+        <p>{{ post.templateContent | excerpt }}</p>
+        {% endif -%}
+        <a href="{{ post.url }}" class="tdbc-button tdbc-button--small tdbc-button--secondary" aria-label="Read {{ post.data.title }}">Read Post</a>
+    </article>
+    {% endfor -%}
+</main>
+{% include 'webring.njk' %}
