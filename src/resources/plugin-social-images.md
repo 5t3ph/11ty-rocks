@@ -1,7 +1,7 @@
 ---
 title: "Plugin: Social Images"
 icon: 🖼
-link: https://www.npmjs.com/package/@11tyrocks/eleventy-plugin-emoji-readtime
+link: https://www.npmjs.com/package/@11tyrocks/eleventy-plugin-social-images
 linkText: Docs and Install
 category: plugin
 order: 3
