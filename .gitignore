@@ -4,9 +4,8 @@ node_modules
 # build artefacts
 public
 src/css
-functions/*.json
-functions/*.html
-src/previews/*
+social/*
+!social/template.html
 
 # secrets and errors
 .env
