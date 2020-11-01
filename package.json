@@ -7,15 +7,15 @@
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
     "build:sass-site": "sass  --no-source-map src/sass/style.scss public/css/style.css",
-    "build:sass-ss": "sass  --no-source-map src/sass/social-previews.scss src/css/social-previews.css",
+    "build:sass-ss": "sass  --no-source-map src/sass/social-previews.scss social/style.css",
     "build:sass": "npm-run-all --parallel build:sass-site build:sass-ss",
     "build:eleventy": "eleventy",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r",
     "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
-    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy screenshot",
+    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy social-images",
     "lint:fix": "stylelint --fix 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
-    "screenshot": "node functions/images.js",
+    "social-images": "eleventy-social-images --outputDir public --dataFile social/pages.json --templatePath social/template.html --stylesPath social/style.css --imageDir img/previews",
     "bump": "npm --no-git-tag-version version"
   },
   "repository": {
@@ -55,6 +55,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@11tyrocks/eleventy-plugin-social-images": "^0.1.0",
     "chrome-aws-lambda": "5.2.1",
     "puppeteer-core": "5.2.1"
   }
