@@ -12,6 +12,10 @@ body {
 main.tdbc-container {
   padding-top: 10vh;
   padding-bottom: 10vh;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 footer {
