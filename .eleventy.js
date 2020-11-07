@@ -6,6 +6,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
+const socialImages = require("@11tyrocks/eleventy-plugin-social-images");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -34,15 +35,6 @@ module.exports = function (eleventyConfig) {
       replacement: "-",
       remove: /[*+~·,()'"`´%!?¿:@\/]/g,
     });
-  });
-
-  eleventyConfig.addFilter("jsonTitle", (str) => {
-    if (!str) {
-      return;
-    }
-    let title = str.replace(/((.*)\s(.*)\s(.*))$/g, "$2&nbsp;$3&nbsp;$4");
-    title = title.replace(/"(.*)"/g, '\\"$1\\"');
-    return title;
   });
 
   eleventyConfig.addFilter("postDate", (dateObj) => {
@@ -75,6 +67,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(emojiReadTime);
+  eleventyConfig.addPlugin(socialImages);
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
