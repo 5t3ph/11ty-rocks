@@ -15,4 +15,8 @@ layout: base.njk
   <article class="tdbc-mx-auto">
     {{ content | safe }}
   </article>
+
+  {% if tags | hasTag('eleventyjs') %}
+  <a href="/eleventyjs/" class="tdbc-button tdbc-mx-auto">View more config samples</a>
+  {% endif %}
 </main>

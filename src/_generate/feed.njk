@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
 	<author>
 		<name>{{ meta.authorName }}</name>
 	</author>
-	{%- for item in collections.all %}
+	{%- for item in collections.all | reverse %}
 	{% set absolutePostUrl %}{{ item.url | url | absoluteUrl(meta.url) }}{% endset %}
 	{% set itemLink %}{% if item.data.link %}{{ item.data.link }}{% else %}{{absolutePostUrl}}{% endif %}{% endset %}
 	<entry>

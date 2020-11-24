@@ -65,6 +65,10 @@ aside {
 }
 // stylelint-enable
 
+.tdbc-posts article + article {
+  margin-top: 5vh;
+}
+
 .tdbc-article__icon {
   display: block;
   font-size: 4rem;

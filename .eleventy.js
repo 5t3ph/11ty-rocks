@@ -48,6 +48,10 @@ module.exports = function (eleventyConfig) {
     return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
   });
 
+  eleventyConfig.addFilter("hasTag", (tags, tag) => {
+    return tags.includes(tag);
+  });
+
   eleventyConfig.addFilter("stripFilename", (file) => {
     return file.replace(/\.[^/.]+$/, "");
   });

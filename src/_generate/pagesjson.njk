@@ -8,4 +8,9 @@ eleventyExcludeFromCollections: true
    "title":"{% if pages.data.title %}{{ pages.data.title | addNbsp | safe }}{% else %}{{ meta.siteName }}{% endif %}",
    "imgName":"{% if pages.data.title %}{{ pages.data.title | slug}}{% else %}home{% endif %}"
 	}{% if loop.last == false %},{% endif %}
+{% endfor %},{% for pages in collections.eleventyjs %}
+	{
+   "title":"{% if pages.data.title %}{{ pages.data.title | addNbsp | safe }}{% else %}{{ meta.siteName }}{% endif %}",
+   "imgName":"{% if pages.data.title %}{{ pages.data.title | slug}}{% else %}home{% endif %}"
+	}{% if loop.last == false %},{% endif %}
 {% endfor %}]
