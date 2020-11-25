@@ -9,7 +9,7 @@ layout: base.njk
   </div>
 </header>
 <main id="main" tabindex="-1" class="tdbc-container tdbc-content-maxlength tdbc-mx-auto tdbc-posts">
-  {%- for post in collections.posts %}
+  {%- for post in collections.posts | reverse %}
     <article id="{{ post.data.title | slug }}">
         <h2>{{ post.data.title }}</h2>
         <small class="tdbc-meta">{{ post.templateContent | emojiReadTime }} • <em>Posted on</em>: {{ post.date | postDate }}</small>

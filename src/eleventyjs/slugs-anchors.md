@@ -1,6 +1,6 @@
 ---
 title: "11ty Slugs and Anchors"
-description: "Extend the default `slug` filter and enable heading anchors"
+description: "Extend the default `slug` filter and enable heading anchors."
 ---
 
 ## `slug` Filter Extension

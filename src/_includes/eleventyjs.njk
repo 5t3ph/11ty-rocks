@@ -8,18 +8,17 @@ layout: base.njk
     <p class="tdbc-lead">Filters, shortcodes, and other tips for extending 11ty</p>
   </div>
 </header>
-<main id="main" tabindex="-1" class="tdbc-container tdbc-content-maxlength tdbc-mx-auto tdbc-posts">
-  {%- for post in collections.eleventyjs %}
-    <article id="{{ post.data.title | slug }}">
-        <h2>{{ post.data.title }}</h2>
-        <small class="tdbc-meta">{{ post.templateContent | emojiReadTime }} • <em>Posted on</em>: {{ post.date | postDate }}</small>
-        {%- if post.data.description %}
-        <p>{{ post.data.description }}</p>
-        {%- else %}
-        <p>{{ post.templateContent | excerpt }}</p>
-        {% endif -%}
-        <a href="{{ post.url }}" class="tdbc-button tdbc-button--small tdbc-button--secondary" aria-label="Read {{ post.data.title }}">Read Post</a>
-    </article>
-    {% endfor -%}
+<main id="main" tabindex="-1" class="tdbc-container tdbc-mx-auto">
+  <div class="tdbc-column-container">
+      {%- for post in collections.eleventyjs | reverse %}
+      <article id="{{ post.data.title | slug }}" class="tdbc-card tdbc-background--texture">
+        <div class="tdbc-card__content">
+          <h2>{{ post.data.title }}</h2>
+          <p>{{ post.data.description }}</p>
+          <a href="{{ post.url }}" class="tdbc-button tdbc-button--text" aria-label="View samples of {{ post.data.title }}">View Samples</a>
+        </div>
+      </article>
+      {% endfor -%}
+  </div>
 </main>
 {% include 'webring.njk' %}
