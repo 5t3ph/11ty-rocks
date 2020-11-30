@@ -21,6 +21,10 @@ $tdbc-type-styles: (
 @each $level, $size in $tdbc-type-styles {
   #{$level} {
     font-size: $size;
+
+    @if ($level == h1) {
+      font-size: clamp(3.25rem, 6vw, 4rem);
+    }
   }
 }
 
@@ -29,7 +33,7 @@ h2 {
 }
 
 @media (max-width: 100ch) {
-  h2 {
+  .tdbc-layout--post h2 {
     margin-left: 1.5rem;
   }
 }
