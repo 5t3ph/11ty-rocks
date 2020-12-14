@@ -26,5 +26,9 @@
   {
     "title": "Beginner's Guide to 11ty",
     "link": "https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/"
+  },
+  {
+    "title": "jamshop Plugins",
+    "link": "https://github.com/jamshop?q=eleventy"
   }
 ]
