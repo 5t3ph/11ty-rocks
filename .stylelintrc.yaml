@@ -261,12 +261,12 @@ rules:
   # In general, we should not be modifying elements within our components, since we can't
   # predict the use cases in which users would add a certain type of element into a component.
   selector-max-type:
-    - 0
+    - 1
     - ignoreTypes:
         - /fieldset/
         - /img/
   # Styles for components should never need the universal selector.
-  selector-max-universal: 0
+  selector-max-universal: 1
   # Ensure any defined symbols are prefixed with "brand-" OR "u-"
   custom-media-pattern: ^tdbc-.+
   custom-property-pattern: ^tdbc-.+
