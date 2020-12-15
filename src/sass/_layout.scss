@@ -90,6 +90,10 @@ aside {
   align-items: start;
   grid-gap: 3.5rem;
   grid-template-columns: repeat(auto-fit, minmax(36ch, 1fr));
+
+  [id] {
+    scroll-margin-top: 2em;
+  }
 }
 
 .tdbc-hero {
