@@ -15,6 +15,12 @@
     <link rel="icon" href="{{ '/favicon.png' | url }}" />
     <link rel="preload" href="{{ '/fonts/arbutus-slab-v9-latin-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
     <link href="{{ '/css/style.css' | url }}" rel="stylesheet" />
+    <link rel="preconnect" href="https://plausible.io">
+    <link rel="dns-prefetch" href="https://plausible.io">
+    {% if '11ty' in meta.url %}
+    <script async defer data-domain="11ty.rocks" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    {% endif %}
     <meta name="twitter:card" content="summary_large_image" />
     {% if meta.twitterUsername %}
     <meta name="twitter:creator" content="@{{ meta.twitterUsername }}" />
