@@ -7,7 +7,7 @@ description: "Use this shortcode and filter as a starting point for your date tr
 
 Get the current year - super useful for copyright dates.
 
-**Usage**: {% raw %}`{{ year }}`{% endraw %}
+**Usage**: {% raw %}`{% year %}`{% endraw %}
 
 ```js
 eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
