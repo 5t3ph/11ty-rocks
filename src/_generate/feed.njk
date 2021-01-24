@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
 	<link href="{{ absoluteUrl }}" rel="self"/>
 	<link href="{{ meta.url }}"/>
 	<updated>{{ collections.all | rssLastUpdatedDate }}</updated>
-	<id>{{ meta.url }}</id>
+	<id>{{ meta.url }}/</id>
 	<author>
 		<name>{{ meta.authorName }}</name>
 	</author>
@@ -22,7 +22,7 @@ eleventyExcludeFromCollections: true
 		<link href="{{ itemLink | htmlToAbsoluteUrls(absolutePostUrl) }}"/>
 		<updated>{{ item.date | rssDate }}</updated>
 		<id>{{ itemLink | htmlToAbsoluteUrls(absolutePostUrl) }}</id>
-		<content type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}{%- if item.data.linkText %}<a href="{{ itemLink | htmlToAbsoluteUrls(absolutePostUrl) }}">{{ item.data.linkText }}</a>{% endif -%}</content>
+		<content type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}{%- if item.data.linkText %}&lt;a href=&quot;{{ itemLink | htmlToAbsoluteUrls(absolutePostUrl) }}&quot;&gt;{{ item.data.linkText }}&lt;/a&gt;{% endif -%}</content>
 	</entry>
 	{%- endfor %}
 </feed>
