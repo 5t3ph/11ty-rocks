@@ -2,6 +2,7 @@
 title: "Create Your First Basic 11ty Website"
 description: "Begin from a blank directory and build up your first Eleventy site. Includes gotchas along the way, why they happen, and how to resolve them. You'll create essential layouts while learn the basics of using Nunjucks and Markdown for templating. And you'll learn to work with local data and external API data. As a bonus, get setup to deploy your final site to Netlify."
 templateEngineOverride: md
+date: 2020-10-31
 ---
 
 The following tutorial is based on a live stream I did with [Eva on Twitch](https://www.twitch.tv/edieblu). If you prefer, you can watch the recording below, or read on for the step-by-step instructions for creating your first basic 11ty website.

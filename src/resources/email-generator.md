@@ -5,6 +5,7 @@ link: https://github.com/5t3ph/11ty-email-generator
 linkText: Create Your Emails
 category: misc
 order: 5
+date: 2020-11-14
 ---
 
 Generate simple, responsive email templates, with inlined CSS on build.

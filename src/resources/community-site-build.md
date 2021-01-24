@@ -5,6 +5,7 @@ link: https://css-tricks.com/a-community-driven-site-with-eleventy-building-the-
 linkText: Build Your Community
 category: tutorial
 order: 7
+date: 2020-10-20
 ---
 
 Based on my experience building [StyleStage.dev](https://stylestage.dev), this tutorial will cover how to create a full-featured 11ty site including:

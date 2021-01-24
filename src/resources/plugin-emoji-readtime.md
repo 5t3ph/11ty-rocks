@@ -5,6 +5,7 @@ link: https://www.npmjs.com/package/@11tyrocks/eleventy-plugin-emoji-readtime
 linkText: Docs for Emoji Read Time
 category: plugin
 order: 4
+date: 2020-10-20
 ---
 
 This plugin provides a filter that displays an estimated read time for Eleventy content, optionally with an emoji visual indicator.

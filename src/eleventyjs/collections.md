@@ -1,6 +1,7 @@
 ---
 title: "Customizing 11ty Collections"
 description: "Create randomized and other variations for your Eleventy collections."
+date: 2020-11-24
 ---
 
 ## `randomizedPosts` Collection

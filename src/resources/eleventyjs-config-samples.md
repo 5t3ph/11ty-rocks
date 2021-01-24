@@ -5,6 +5,7 @@ link: /eleventyjs/
 linkText: View All Samples
 category: tutorial
 order: 1
+date: 2020-11-23
 ---
 
 A growing collection of filters, shortcodes, and other tips for extending 11ty.

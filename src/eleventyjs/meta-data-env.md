@@ -1,6 +1,7 @@
 ---
 title: "Site Meta Data and `.env` Variables"
 description: "Create a central data store for your meta data and to retrieve `.env` variables."
+date: 2020-11-23
 ---
 
 ## Site Meta Data

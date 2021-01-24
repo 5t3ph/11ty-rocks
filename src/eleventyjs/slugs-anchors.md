@@ -1,6 +1,7 @@
 ---
 title: "11ty Slugs and Anchors"
 description: "Extend the default `slug` filter and enable heading anchors."
+date: 2020-11-23
 ---
 
 ## `slug` Filter Extension

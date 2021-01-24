@@ -1,6 +1,7 @@
 ---
 title: "Filters for Data Arrays in 11ty"
 description: "Learn several ways to randomly pick or subset data, or limit the returned results from a data array."
+date: 2020-11-24
 ---
 
 > These filters can be used on Eleventy collections or any custom data that presents as an array.

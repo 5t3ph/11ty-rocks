@@ -1,6 +1,7 @@
 ---
 title: "11ty Date Shortcodes and Filters"
 description: "Use this shortcode and filter as a starting point for your date transformation needs."
+date: 2020-11-23
 ---
 
 ## `year` Shortcode

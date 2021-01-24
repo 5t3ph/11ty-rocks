@@ -19,10 +19,10 @@ eleventyExcludeFromCollections: true
 	{% set itemLink %}{% if item.data.link %}{{ item.data.link }}{% else %}{{absolutePostUrl}}{% endif %}{% endset %}
 	<entry>
 		<title>{{ item.data.title  }}</title>
-		<link href="{{ itemLink }}"/>
+		<link href="{{ itemLink | htmlToAbsoluteUrls(absolutePostUrl) }}"/>
 		<updated>{{ item.date | rssDate }}</updated>
-		<id>{{ itemLink }}</id>
-		<content type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+		<id>{{ itemLink | htmlToAbsoluteUrls(absolutePostUrl) }}</id>
+		<content type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}{%- if item.data.linkText %}<a href="{{ itemLink | htmlToAbsoluteUrls(absolutePostUrl) }}">{{ item.data.linkText }}</a>{% endif -%}</content>
 	</entry>
 	{%- endfor %}
 </feed>

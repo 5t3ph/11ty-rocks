@@ -1,6 +1,7 @@
 ---
 title: "11ty Filters for Tags"
 description: "Filters for working with tags"
+date: 2020-11-24
 ---
 
 ## `hasTag` Filter

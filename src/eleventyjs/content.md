@@ -1,6 +1,7 @@
 ---
 title: "Filters for 11ty Content"
 description: "Includes filters for creating an excerpt and other content enhancements."
+date: 2020-11-24
 ---
 
 ## `excerpt` Filter

@@ -24,7 +24,7 @@ layout: base.njk
         <h2>{{ post.data.title }}</h2>
         <small class="tdbc-meta">{{ post.templateContent | emojiReadTime }} • <em>Posted on</em>: {{ post.date | postDate }}</small>
         {%- if post.data.description %}
-        <p>{{ post.data.description | excerpt }}</p>
+        <p>{{ post.data.description }}</p>
         {%- else %}
         <p>{{ post.templateContent | excerpt }}</p>
         {% endif -%}

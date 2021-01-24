@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
 }
 
-html {
+html:focus-within {
   scroll-behavior: smooth;
 }
 
@@ -45,6 +45,15 @@ body {
   font-size: 100%;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+[id] {
+  scroll-margin-top: 2em;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
