@@ -1,10 +1,9 @@
 // stylelint-disable-next-line selector-max-id, selector-max-specificity
 #tdbc-siteid {
   font-size: tdbc-type-size(h3);
-  text-decoration: none;
 }
 
-// stylelint-disable selector-max-type
+// stylelint-disable selector-max-type, function-name-case
 .tdbc-sitenav {
   background-color: tdbc-color("primary");
 
@@ -13,25 +12,47 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
   }
 
   &__container {
-    justify-content: space-between;
+    --tdbc-multiplier: calc((40rem - 100%) * 666);
+
     width: 100%;
     max-width: 120ch;
     margin: 0 auto;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 1rem;
+
+    &::before {
+      flex-basis: var(--tdbc-multiplier);
+      flex-grow: 666;
+      height: 2rem;
+      content: "";
+    }
+
+    > * {
+      flex-grow: 1;
+
+      &:first-child {
+        order: -1;
+      }
+    }
   }
 
   &__navlist {
-    li + li {
-      margin-left: 1rem;
+    gap: 1rem;
+
+    li a {
+      // stylelint-disable-next-line
+      font-size: clamp(0.9rem, 4vw, 1.15rem);
     }
   }
 
   &,
   a:not(.tdbc-button) {
     color: tdbc-color("text");
+    text-underline-offset: 0.1em;
+    text-decoration-color: rgba(tdbc-color("text"), 0.6);
   }
 }
 // stylelint-enable

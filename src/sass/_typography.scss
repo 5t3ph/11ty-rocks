@@ -76,43 +76,24 @@ strong {
 
 a:not([class*="button"]) {
   color: $tdbc-link-color;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-
-  &:before {
-    content: "";
-    width: 100%;
-    height: 0.08em;
-    background-color: currentColor;
-    opacity: 0.65;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: all 180ms ease-in;
-  }
-
-  &:focus:before,
-  &:hover:before {
-    height: 0.35em;
-    opacity: 0.25;
-    bottom: 0.08em;
-  }
+  text-underline-offset: 0.08em;
+  transition: all 180ms ease-in-out;
 
   &:focus {
-    outline: 2px solid transparent;
+    outline: 2px solid currentColor;
+    outline-offset: -0.05em;
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: -0.15em;
-      right: -0.15em;
-      bottom: 0;
-      left: -0.15em;
-      border-radius: 0.15em;
+    > img:only-child {
       box-shadow: 0 0 0 2px currentColor;
     }
+  }
+
+  &:hover {
+    background-color: rgba($tdbc-link-color, 0.08);
+  }
+
+  code:not([class*="language"]) {
+    color: inherit;
   }
 }
 
@@ -132,7 +113,7 @@ code:not([class*="language"]) {
   padding: 0.15em;
   background-color: rgba(tdbc-color("light"), 0.5);
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 0.75em;
+  font-size: 1.75ex;
   line-height: 1.1;
   color: tdbc-color("text");
 }

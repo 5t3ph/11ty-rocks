@@ -70,6 +70,12 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("orderedLinks", function (collection) {
+    return collection.getFilteredByTag("links").sort((a, b) => {
+      return a.data.order - b.data.order;
+    });
+  });
+
   eleventyConfig.addPlugin(emojiReadTime);
   eleventyConfig.addPlugin(socialImages);
 

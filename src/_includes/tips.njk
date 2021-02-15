@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+{% include 'sitenav.njk' %}
+<header class="tdbc-hero tdbc-background--texture tdbc-background--primary">
+  <div class="tdbc-content-maxlength">
+    <h1>{{ title }}</h1>
+    <p class="tdbc-lead">Useful snippets and ideas for managing and creating 11ty projects</p>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="tdbc-container tdbc-mx-auto">
+  <div class="tdbc-column-container">
+      {%- for post in collections.tips | reverse %}
+      <article id="{{ post.data.title | slug }}" class="tdbc-card tdbc-background--texture">
+        <div class="tdbc-card__content">
+          <h2>{{ post.data.title }}</h2>
+          <p>{{ post.data.description }}</p>
+          <a href="{{ post.url }}" class="tdbc-button tdbc-button--text" aria-label="Read the post {{ post.data.title }}">Read post</a>
+        </div>
+      </article>
+      {% endfor -%}
+  </div>
+</main>
+{% include 'webring.njk' %}

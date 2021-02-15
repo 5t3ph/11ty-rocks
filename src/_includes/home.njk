@@ -17,10 +17,10 @@ layout: base.njk
   {{ content | safe }}
 </aside>
 <main id="main" tabindex="-1" class="tdbc-container tdbc-mx-auto">
-{# Add latest post article #}
-{%- for post in collections.posts | head(-1) %}
-<article id="{{ post.data.title | slug }}" class="tdbc-card tdbc-background--light tdbc-background--texture tdbc-mx-auto tdbc-latest">
-<div class="tdbc-card__content">
+  <div class="tdbc-column-container tdbc-mt">
+    {%- for post in collections.posts | head(-1) %}
+    <article id="{{ post.data.title | slug }}" class="tdbc-card tdbc-background--light tdbc-background--texture tdbc-mx-auto tdbc-latest">
+      <div class="tdbc-card__content">
         <h2>{{ post.data.title }}</h2>
         <small class="tdbc-meta">{{ post.templateContent | emojiReadTime }} • <em>Posted on</em>: {{ post.date | postDate }}</small>
         {%- if post.data.description %}
@@ -28,19 +28,32 @@ layout: base.njk
         {%- else %}
         <p>{{ post.templateContent | excerpt }}</p>
         {% endif -%}
+        <span class="tdbc-row tdbc-row--links">
         <a href="{{ post.url }}" class="tdbc-button tdbc-button--text">Read Post</a>
-        <a href="/posts/" class="tdbc-ml">View Post Archive</a>
-</div>
+        <a href="/posts/">View Post Archive</a>
+        </span>
+      </div>
     </article>
     {% endfor -%}
-  <h2 id="resources" class="tdbc-text-center">Resources</h2>
+    {%- for resource in collections.orderedLinks %}
+    <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
+      <div class="tdbc-card__content">
+        <span class="tdbc-article__icon" aria-hidden="true">{{ resource.data.icon }}</span>
+        <h2>{{ resource.data.title | safe }}</h2>
+        {{ resource.templateContent | safe }}
+        <a href="{{ resource.data.link }}" class="tdbc-button tdbc-button--text">{{ resource.data.linkText }}</a>
+      </div>
+    </article>
+    {% endfor -%}
+  </div>
+  <h2 id="resources" class="tdbc-text-center tdbc-mt-vh">Resources</h2>
   <p class="tdbc-lead tdbc-text-center">Starters, plugins, and externally hosted articles and tutorials</p>
   <div class="tdbc-column-container tdbc-mt">
     {%- for resource in collections.orderedResources %}
     <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
       <div class="tdbc-card__content">
         <span class="tdbc-article__icon" aria-hidden="true">{{ resource.data.icon }}</span>
-        <h2>{{ resource.data.title }}</h2>
+        <h2>{{ resource.data.title | safe }}</h2>
         {{ resource.templateContent | safe }}
         <a href="{{ resource.data.link }}" class="tdbc-button tdbc-button--text">{{ resource.data.linkText }}</a>
       </div>

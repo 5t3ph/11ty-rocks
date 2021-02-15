@@ -131,6 +131,14 @@ hr {
   &--center-content {
     justify-items: center;
   }
+
+  &--links {
+    align-items: center;
+
+    > a {
+      justify-self: start;
+    }
+  }
 }
 
 .tdbc-video {

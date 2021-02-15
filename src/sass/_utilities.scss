@@ -78,6 +78,10 @@ $tdbc-alignments: left, center, right !default;
   margin-top: 2rem;
 }
 
+.tdbc-mt-vh {
+  margin-top: max(10vh, 4rem);
+}
+
 .tdbc-ml {
   margin-left: 2rem;
 }
