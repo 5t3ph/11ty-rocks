@@ -100,10 +100,12 @@ Let's examine a few key aspects of that loop for successfully accessing and outp
 
 And with that you've successfully created and output content as data!
 
-## Further Reading
+## Further Reading and Resources
 
 Check out these related quick tips to extend this solution even more:
 
 - [Changing Content Output](/tips/changing-content-output/)
 - [Excluding Content Output](/tips/excluding-content-output/)
 - [Managing Permalinks](/tips/permalinks/)
+
+And checkout [this livestream I did with Colby Fayock](https://www.youtube.com/watch?v=nIiOwNb7KR4) where we use this same "content as data" idea when we start a site from scratch, but with a bit more templating features attached.
