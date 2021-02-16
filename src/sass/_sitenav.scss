@@ -43,6 +43,7 @@
     gap: 1rem;
 
     li a {
+      margin: 0 0.5rem;
       // stylelint-disable-next-line
       font-size: clamp(0.9rem, 4vw, 1.15rem);
     }
