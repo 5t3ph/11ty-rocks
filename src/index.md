@@ -8,5 +8,3 @@ eleventyExcludeFromCollections: all
 > Check out my [overview of key Eleventy features](/posts/going-beyond-static-with-eleventy/) and learn how to exceed the traditional limits of static.
 
 View the full 11ty docs at [11ty.dev](https://11ty.dev), and bookmark this site or [grab the RSS](/feed/) to keep updated on new resources, tips, and tutorials.
-
-<div class="tdbc-video"><iframe src="https://www.youtube-nocookie.com/embed/BKdQEXqfFA0?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
