@@ -98,6 +98,10 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
+  eleventyConfig.setBrowserSyncConfig({
+    open: true,
+  });
+
   return {
     passthroughFileCopy: true,
     dir: {
