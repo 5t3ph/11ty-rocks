@@ -30,5 +30,9 @@
   {
     "title": "jamshop Plugins",
     "link": "https://github.com/jamshop?q=eleventy"
+  },
+  {
+    "title": "11up - CLI for Eleventy Starters",
+    "link": "https://www.npmjs.com/package/11up"
   }
 ]
