@@ -186,7 +186,11 @@ The market for content about Eleventy is still young, which I find exciting and 
 
 ## Create an Eleventy Site in 3 Minutes
 
-> This was originally spoken over a recording of coding out the steps described, which you can view by skipping to [slide 42](https://slides.com/st3ph/going-beyond-static-with-eleventy/?token=s13kGbJt#/42/0/0) from the presentation, and using the controls to play the video. These steps are also very similar to what is described in my tutorial on [building your first 11ty site](/posts/create-your-first-basic-11ty-website) which includes code samples for all steps.
+> These steps are also very similar to what is described in my tutorial on [building your first 11ty site](/posts/create-your-first-basic-11ty-website) which includes code samples for all steps.
+
+**This 3 minute video is followed by the transcript and a few code samples**:
+
+<div class="tdbc-video"><iframe title="YouTube video: Build an 11ty Site in 3 Minutes" src="https://www.youtube-nocookie.com/embed/BKdQEXqfFA0?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Ok! So I hope you're excited and maybe even have a project in mind to try to build with Eleventy!
 
