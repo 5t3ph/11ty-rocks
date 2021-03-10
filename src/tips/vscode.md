@@ -4,6 +4,8 @@ description: " Helpful VSCode settings for working on 11ty projects."
 date: 2021-02-15
 ---
 
+> The following are intended to be added within your VSCode `settings.json`.
+
 ## Extend Emmet for Nunjucks
 
 There are two steps to getting Emmet to work for Nunjucks.

@@ -4,7 +4,7 @@ icon: 🖼
 link: https://www.npmjs.com/package/@11tyrocks/eleventy-plugin-social-images
 linkText: Docs and Install
 category: plugin
-order: 3
+order: 4
 date: 2020-11-01
 ---
 
