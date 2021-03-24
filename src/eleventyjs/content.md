@@ -2,7 +2,40 @@
 title: "Filters for 11ty Content"
 description: "Includes filters for creating an excerpt and other content enhancements."
 date: 2020-11-24
+updatedOn: 2021-03-24
 ---
+
+## `markdown` Filter
+
+Sometimes you want to convert a specific bit of content into Markdown. For example, if you have created content as JSON formatted custom data within `_data`. In that case, you maybe don't want to use pagination to create pages but instead to loop through it somewhere.
+
+By tapping into the included `markdown-it` Markdown parser that is used by Eleventy, we can create a filter to use adhoc on content:
+
+```js
+// Add above your Eleventy config
+const markdownIt = require("markdown-it");
+
+// Add within your config module
+const md = new markdownIt({
+  html: true,
+});
+
+eleventyConfig.addFilter("markdown", (content) => {
+  return md.render(content);
+});
+```
+
+To use this filter, you'll also need to pass it through the Eleventy-included `safe` filter to render insted of escape the compiled HTML:
+
+```js
+{
+  {
+    data.content | markdown | safe;
+  }
+}
+```
+
+> **Note**: Since the Markdown conversion will include elements like paragraphs, don't place the line including that content within a `<p>` or you will end up with extra paragraphs.
 
 ## `excerpt` Filter
 

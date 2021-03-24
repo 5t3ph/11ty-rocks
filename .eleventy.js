@@ -39,7 +39,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, {
-      zone: "America/Chicago",
+      zone: "UTC",
     }).toLocaleString(DateTime.DATE_MED);
   });
 

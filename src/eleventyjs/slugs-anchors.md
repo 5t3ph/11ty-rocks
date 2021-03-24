@@ -1,36 +1,9 @@
 ---
-title: "11ty Slugs and Anchors"
-description: "Extend the default `slug` filter and enable heading anchors."
+title: "11ty Anchors"
+description: "Enable heading anchors."
 date: 2020-11-23
+updatedOn: 2021-03-24
 ---
-
-## `slug` Filter Extension
-
-The default `slug` filter is not quite comprehensive of a few select characters, such as backticks and parentheses, and also doesn't strip emoji. We can add a helper package and update the regex to remedy this.
-
-**Usage**: {% raw %}`{{ title | slug }}`{% endraw %}
-
-```js
-// npm install --save-dev emoji-regex
-// Import prior to `module.exports` within `.eleventy.js`
-const emojiRegex = require("emoji-regex");
-
-eleventyConfig.addFilter("slug", (str) => {
-  if (!str) {
-    return;
-  }
-
-  const regex = emojiRegex();
-  // Remove Emoji first
-  let string = str.replace(regex, "");
-
-  return slugify(string, {
-    lower: true,
-    replacement: "-",
-    remove: /[*+~·,()'"`´%!?¿:@\/]/g,
-  });
-});
-```
 
 ## Enable anchor links on content headings
 

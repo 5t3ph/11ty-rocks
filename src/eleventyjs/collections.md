@@ -2,7 +2,26 @@
 title: "Customizing 11ty Collections"
 description: "Create randomized and other variations for your Eleventy collections."
 date: 2020-11-24
+updatedOn: 2021-03-24
 ---
+
+## Collections from Custom Data
+
+If you have custom data that you don't need paginated but do need to customize the returned items, here's how to create it as a collection.
+
+In this example, replace `customData` with the filename of your custom data.
+
+```js
+eleventyConfig.addCollection("customDataCollection", (collection) => {
+  const allItems = collection.getAll()[0].data.customData;
+
+  // Filter or use another method to select the items you want
+  // for the collection
+  return allItems.filter((item) => {
+    // ...
+  });
+});
+```
 
 ## `randomizedPosts` Collection
 
