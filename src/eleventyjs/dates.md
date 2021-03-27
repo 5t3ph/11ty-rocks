@@ -22,7 +22,7 @@ By importing `DateTime` from `luxon` you are provided a deep toolbox of date met
 
 Since this is a filter, and you'll likely use it to pass {% raw %}`{{ page.date | postDate }}`{% endraw %}, the format at that point is, ex: `(Sun Dec 31 2017 18:00:00 GMT-0600 (Central Standard Time)` which to Luxon is the `JSDate` format.
 
-In the filter, the "zone" is importantly set to `UTC` to prevent off-by-one date errors.
+> In the filter, the "zone" is importantly set to `UTC` to prevent off-by-one date errors.
 
 The output as shown will be `Nov 23, 2020`, or you can update it to another option [referenced in the Luxon docs on DateTime](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html).
 
