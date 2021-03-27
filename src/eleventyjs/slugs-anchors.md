@@ -1,9 +1,30 @@
 ---
-title: "11ty Anchors"
-description: "Enable heading anchors."
+title: "11ty Slugs and Anchors"
+description: "Extend the default `slug` filter and enable heading anchors."
 date: 2020-11-23
-updatedOn: 2021-03-24
+updatedOn: 2021-03-27
 ---
+
+## `slug` Filter Extension
+
+The default `slug` filter uses [slugify](https://www.npmjs.com/package/slugify) under the hood, but sometimes the default behavior isn't quite enough if you are using special characters, including emoji.
+
+We can override the filter to enable `strict` mode, enforce lowercasing, and _optionally_ add any other characters you encounter being problematic. In this case, I'm enforcing removing `"` because I have experienced issues without explicitly defining it.
+
+**Usage**: {% raw %}`{{ title | slug }}`{% endraw %}
+
+```js
+// Import prior to `module.exports` within `.eleventy.js`
+const slugify = require("slugify");
+
+eleventyConfig.addFilter("slug", (str) => {
+  return slugify(str, {
+    lower: true,
+    strict: true,
+    remove: /["]/g,
+  });
+});
+```
 
 ## Enable anchor links on content headings
 
