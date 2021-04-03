@@ -182,14 +182,14 @@ summary:focus {
 
 {% set css %}
 .centering {
-display: grid;
-place-content: center;
-min-height: 30vh;
+  display: grid;
+  place-content: center;
+  min-height: 30vh;
 }
 
 .centering span {
-padding: .5em;
-outline: 2px solid;
+  padding: .5em;
+  outline: 2px solid;
 }
 {% endset %}
 
