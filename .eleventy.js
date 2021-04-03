@@ -8,7 +8,7 @@ const { DateTime } = require("luxon");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 const socialImages = require("@11tyrocks/eleventy-plugin-social-images");
 
-const openInCodepen = require("../eleventy-plugin-open-in-codepen");
+const openInCodepen = require("@11tyrocks//eleventy-plugin-open-in-codepen");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
