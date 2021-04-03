@@ -1,0 +1,25 @@
+details {
+  margin: 2rem 0 0;
+}
+
+details pre[class*="language-"] {
+  margin: 0;
+}
+
+summary {
+  padding: 0.15em 0.5em;
+  background-color: #0d3233;
+  color: #fff;
+  cursor: pointer;
+}
+
+summary:focus {
+  outline: 2px solid #0d3233;
+  outline-offset: 2px;
+}
+
+.demo {
+  min-height: 30vh;
+  padding: 1rem;
+  border: 2px dashed currentColor;
+}

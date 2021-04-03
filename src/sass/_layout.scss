@@ -53,7 +53,7 @@ article {
     }
   }
 
-  * + h2 {
+  &:not(.tdbc-card) * + h2 {
     margin-top: 3rem;
   }
 }

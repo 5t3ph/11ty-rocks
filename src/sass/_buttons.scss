@@ -8,6 +8,7 @@
   padding: 0.25em 1em;
   transition: 180ms ease-in-out;
   transition-property: background, border;
+  border: none;
   border-radius: $tdbc-border-radius/2;
   background-color: tdbc-color("primary");
   color: tdbc-color(text);
@@ -52,6 +53,17 @@
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.03em;
+  }
+
+  &__icon {
+    width: 1.15em;
+    margin-right: 0.5em;
+
+    svg {
+      display: block;
+      width: 100%;
+      fill: currentColor;
+    }
   }
 }
 

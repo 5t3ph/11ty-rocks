@@ -1,0 +1,15 @@
+{% if not hideDescription %}
+{{ description | safe }}
+{% endif %}
+
+<details>
+  <summary>CSS for "{{ title }}"</summary>
+
+  {% highlight "css" %}
+  {{- css | safe }}
+  {% endhighlight %}
+</details>
+
+{% set htmlCode %}{{ '' if hideDemo else html | safe }}{% endset %}
+
+{% codeDemo css, htmlCode %}

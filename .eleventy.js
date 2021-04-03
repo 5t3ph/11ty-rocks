@@ -8,9 +8,18 @@ const { DateTime } = require("luxon");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 const socialImages = require("@11tyrocks/eleventy-plugin-social-images");
 
+const openInCodepen = require("../eleventy-plugin-open-in-codepen");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(openInCodepen, {
+    siteUrl: "11ty.Rocks",
+    siteTitle: "11ty Rocks!",
+    siteTag: "11tyrocks",
+    buttonClass: "tdbc-button tdbc-button--secondary",
+    buttonIconClass: "tdbc-button__icon",
+  });
 
   eleventyConfig.addWatchTarget("./src/sass/");
 
@@ -78,6 +87,36 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(emojiReadTime);
   eleventyConfig.addPlugin(socialImages);
+
+  eleventyConfig.addShortcode("codeDemo", function (css, html) {
+    if (!html.length) return "";
+
+    if (!css) {
+      return `
+<div class="demo">
+${html}
+</div>`;
+    }
+
+    const hash = Math.floor(Math.random(100) * Math.floor(999));
+
+    const cssRE = new RegExp(/(?<=\.)([\w|-]+)(?=\s|,)/, "gm");
+    const cssCode = css.replace(cssRE, `$1-${hash}`);
+
+    let htmlCode = html;
+    css.match(cssRE).forEach((match) => {
+      // prettier-ignore
+      const htmlPattern = match.replace("-", "\\-");
+      const htmlRE = new RegExp(`(${htmlPattern})(?=\\s|")`, "gm");
+      htmlCode = htmlCode.replace(htmlRE, `${match}-${hash}`);
+    });
+
+    return `
+<style>${cssCode}</style>
+<div class="demo">
+${htmlCode}
+</div>`;
+  });
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
