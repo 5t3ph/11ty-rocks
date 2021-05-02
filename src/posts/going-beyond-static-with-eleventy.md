@@ -202,8 +202,8 @@ Once the installs complete, we'll open package.json and update the default scrip
 
 ```json
 "scripts": {
-  "start": "eleventy --serve",
-  "build": "eleventy"
+  "start": "npx @11ty/eleventy --serve",
+  "build": "npx @11ty/eleventy"
 },
 ```
 

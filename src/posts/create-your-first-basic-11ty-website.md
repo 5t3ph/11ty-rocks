@@ -25,8 +25,8 @@ Once the installs complete, open `package.json` and update the default `scripts`
 
 ```js
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
 ```
 
