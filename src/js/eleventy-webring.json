@@ -34,5 +34,9 @@
   {
     "title": "11up - CLI for Eleventy Starters",
     "link": "https://www.npmjs.com/package/11up"
+  },
+  {
+    "title": "Sia's Eleventy Posts",
+    "link": "https://sia.codes/tags/eleventy/"
   }
 ]
