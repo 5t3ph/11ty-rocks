@@ -209,3 +209,8 @@ eleventy-webring {
 
   padding-bottom: 10vh;
 }
+
+::selection {
+  background-color: #fff;
+  color: #000;
+}
