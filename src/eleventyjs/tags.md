@@ -14,7 +14,7 @@ Useful when using a layout for multiple collection types, such as to provide a d
 
 ```js
 eleventyConfig.addFilter("hasTag", (tags, tag) => {
-  return tags.includes(tag);
+  return (tags || []).includes(tag);
 });
 ```
 
