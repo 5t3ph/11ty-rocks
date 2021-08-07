@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .tdbc-button {
   display: inline-flex;
   align-items: center;
@@ -9,7 +11,7 @@
   transition: 180ms ease-in-out;
   transition-property: background, border;
   border: none;
-  border-radius: $tdbc-border-radius/2;
+  border-radius: math.div($tdbc-border-radius, 2);
   background-color: tdbc-color("primary");
   color: tdbc-color(text);
   font-size: 1.125rem;

@@ -3,8 +3,8 @@ title: 11ty.Rocks on Youtube
 icon: 📺
 link: https://www.youtube.com/channel/UCTuSQg_Ol4shhSYQ1EfpHiQ?sub_confirmation=1
 linkText: Subscribe to 11ty Rocks
-category: misc
-order: 1
+category: tutorial
+order: 4
 date: 2021-02-20
 ---
 

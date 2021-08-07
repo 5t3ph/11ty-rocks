@@ -79,6 +79,10 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("pluck", function (arr, attr, value) {
+    return arr.filter((item) => item.data[attr] === value);
+  });
+
   eleventyConfig.addCollection("orderedLinks", function (collection) {
     return collection.getFilteredByTag("links").sort((a, b) => {
       return a.data.order - b.data.order;

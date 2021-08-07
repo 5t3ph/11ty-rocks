@@ -3,7 +3,7 @@ title: Single-Page Setup <small>(recorded livestream)</small>
 icon: 👩‍💻
 link: https://www.youtube.com/watch?v=nIiOwNb7KR4
 linkText: Watch Recording
-category: plugin
+category: misc
 order: 4
 date: 2021-02-15
 ---

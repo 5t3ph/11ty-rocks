@@ -46,7 +46,7 @@
       $value: $key,
     );
 
-    &:nth-child(#{$bg-length}n + #{$index}) {
+    &:nth-of-type(#{$bg-length}n + #{$index}) {
       &,
       h2,
       p,

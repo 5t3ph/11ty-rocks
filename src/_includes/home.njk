@@ -51,17 +51,20 @@ layout: base.njk
     <p class="tdbc-lead tdbc-text-center">Starters, plugins, and externally hosted articles and tutorials</p>
     <div class="tdbc-video"><iframe title="YouTube video: Build an 11ty Site in 3 Minutes" src="https://www.youtube-nocookie.com/embed/BKdQEXqfFA0?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div>
-  <div class="tdbc-column-container tdbc-mt">
-    {%- for resource in collections.orderedResources %}
-    <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
-      <div class="tdbc-card__content">
-        <span class="tdbc-article__icon" aria-hidden="true">{{ resource.data.icon }}</span>
-        <h2>{{ resource.data.title | safe }}</h2>
-        {{ resource.templateContent | safe }}
-        <a href="{{ resource.data.link }}" class="tdbc-button tdbc-button--text">{{ resource.data.linkText }}</a>
-      </div>
-    </article>
-    {% endfor -%}
+  {%- for category in categories -%}
+  <h2 class="tdbc-mt-vh">{{ category.title }}</h2>
+  <div class="tdbc-column-container">
+  {%- for resource in collections.orderedResources | pluck('category', category.slug) %}
+  <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
+    <div class="tdbc-card__content">
+      <span class="tdbc-article__icon" aria-hidden="true">{{ resource.data.icon }}</span>
+      <h2>{{ resource.data.title | safe }}</h2>
+      {{ resource.templateContent | safe }}
+      <a href="{{ resource.data.link }}" class="tdbc-button tdbc-button--text">{{ resource.data.linkText }}</a>
+    </div>
+  </article>
+  {% endfor -%}
   </div>
+  {% endfor -%}
 </main>
 {% include 'webring.njk' %}

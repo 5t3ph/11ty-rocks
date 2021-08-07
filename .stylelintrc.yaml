@@ -240,6 +240,7 @@ rules:
         - include
         - if
         - mixin
+        - use
         - return
         - warn
   # Disallow "@extend" in scss.

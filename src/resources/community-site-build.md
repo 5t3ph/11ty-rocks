@@ -4,7 +4,7 @@ icon: 🤝
 link: https://css-tricks.com/a-community-driven-site-with-eleventy-building-the-site/
 linkText: Build Your Community
 category: tutorial
-order: 7
+order: 2
 date: 2020-10-20
 ---
 
