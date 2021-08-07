@@ -27,12 +27,8 @@ eleventyConfig.addFilter("markdown", (content) => {
 
 To use this filter, you'll also need to pass it through the Eleventy-included `safe` filter to render insted of escape the compiled HTML:
 
-```js
-{
-  {
-    data.content | markdown | safe;
-  }
-}
+```twig
+{% raw %}{{ data.content | markdown | safe }}{% endraw %}
 ```
 
 > **Note**: Since the Markdown conversion will include elements like paragraphs, don't place the line including that content within a `<p>` or you will end up with extra paragraphs.

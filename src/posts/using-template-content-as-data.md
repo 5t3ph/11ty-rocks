@@ -74,7 +74,7 @@ Our Nunjucks loop might then look as follows for accessing the book reviews:
 
 {%raw-%}
 
-```js
+```twig
 {% for review in collections.reviews %}
   <article>
     <h2>

@@ -14,14 +14,14 @@ The `{% raw %}{{ page.fileSlug }}{% endraw %}` is an Eleventy provided data vari
 
 Our logic includes the class of "home" when there is no `fileSlug` available since the the main `index` will not compute a `fileSlug`.
 
-```js
+```twig
 <body
   class="page--{% raw %}{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}{% endraw %}">
 ```
 
 You may also add the layout in a similar way:
 
-```js
+```twig
 <body class="layout--{% raw %}{{ layout }}{% endraw %}">
 ```
 

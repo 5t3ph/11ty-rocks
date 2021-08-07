@@ -14,7 +14,7 @@ This is often used to create [sitemaps](https://github.com/5t3ph/11ty-netlify-ju
 
 Changing the file type is done by simply appending the desired extension via the `permalink`:
 
-```md
+```twig
 permalink: "/{%raw%}{{ page.fileSlug }}{%endraw%}.txt"
 ```
 

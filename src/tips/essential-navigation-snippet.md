@@ -10,7 +10,7 @@ First, we set the variable of `currentUrl` to contain the current page URL, and 
 
 In this example we are looping through the `pages` collection, which you may need to adjust to match your desired navigation content.
 
-```js
+```twig
 {%raw%}
 {% set currentUrl %}{{ page.url }}{% endset %}
 

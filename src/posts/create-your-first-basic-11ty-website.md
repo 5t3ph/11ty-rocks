@@ -112,7 +112,7 @@ Finally, we need to designate where the body of the markdown file should go. Thi
 
 This makes our full `base.njk` the following, with a bit of extra HTML semantics:
 
-```md
+```twig
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -234,7 +234,7 @@ Often it is nice to display a list of your posts. Some times that's on the home 
 
 Re-open `index.md` and add the following, then we'll review what's happening:
 
-```liquid
+```twig
 ## Blog Posts
 
 {% for post in collections.posts %}
@@ -256,7 +256,7 @@ We can modify our `for` loop to use semantic HTML and create a list of links to 
 
 We've added one new variable, which is `url`. This is a page variable provided by 11ty for any paged piece of content, and so is available directly off of our local loop variable of `post`:
 
-```liquid
+```twig
 <ul>
 {% for post in collections.posts %}
 <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
@@ -370,7 +370,7 @@ For fun, let's add our facts after our blog post content.
 
 Add the following after `article` in `_includes/post.njk`:
 
-```liquid
+```twig
 <aside>
   {% for fact in facts %}
     <p>{{ fact }}</p>
@@ -405,7 +405,7 @@ eleventyConfig.addFilter("randomItem", (arr) => {
 
 Back in our `post` layout, we'll update our `for` loop to include our filter. If you recall from applying the `safe` filter, a filter goes _after_ the variable or collection it is being applied to, with a pipe `|` character inbetween. The `facts` array is passed into the filter for processing.
 
-```md
+```twig
 {% for fact in facts | randomItem %}
 ```
 
@@ -439,7 +439,7 @@ It's ok if you're not very familiar with Node! What we're doing here is _fetchin
 
 Now we'd like to display the retrieved cat pic on our home page. Add the following to `index.md`:
 
-```md
+```twig
 ## Cat of the Day
 
 <img src="{{ catpic }}" />

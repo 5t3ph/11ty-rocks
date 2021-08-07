@@ -85,7 +85,7 @@ Now, since this is a case study of [SmolCSS.dev](https://smolcss.dev), we're goi
 
 Within `demo.njk` let's populate our demo template:
 
-```js
+```twig
 {% raw %}{{ description | safe }}{% endraw %}
 
 <style>
@@ -114,7 +114,7 @@ Now this partial accepts the following variables:
 
 Let's go back to our first demo file and add the content within these variables:
 
-```js
+```twig
 {% raw %}{% set description %}{% endraw %}
 
 **Put down the CSS centering jokes**! This modern update is often the solution you're looking for to solve your centering woes.
@@ -207,7 +207,7 @@ The great thing about handling this via a partial that is passed variables to mo
 
 For example, maybe you don't _always_ have HTML and description output and just want to show the CSS. So, you could create and handle for a `hideDemo` variable:
 
-```js
+```twig
 {% raw %}{% if not hideDescription %}{% endraw %}
 {% raw %}{{ description | safe }}{% endraw %}
 {% raw %}{% endif %}{% endraw %}
@@ -221,7 +221,7 @@ For example, maybe you don't _always_ have HTML and description output and just 
 
 Which would be set as follows within your code file:
 
-```js
+```twig
 {% raw %}{% set hideDescription = true %}{% endraw %}
 {% raw %}{% set hideDemo = true %}{% endraw %}
 ```
@@ -256,7 +256,7 @@ This takes the `demos` collection and reorders it by our custom `order` key and 
 
 Now we can loop through the new collection to output it within our main index:
 
-```js
+```twig
 {% raw %}{% for demo in collections.orderedDemos %}{% endraw %}
 <article>
   <h2 id="{% raw %}{{ demo.fileSlug }}{% endraw %}">{% raw %}{{ demo.data.title }}{% endraw %}</h2>
@@ -273,7 +273,7 @@ To setup an RSS feed, install the `eleventy-plugin-rss` plugin and follow the in
 
 The only alteration is to change from the `posts` collection to use our `orderedDemos` collection to correctly order the feed. In addition, you'll need to pass the `reverse` filter, resulting in the following start of the feed loop:
 
-```js
+```twig
 {% raw %}{%- for item in collections.orderedDemos | reverse %}{% endraw %}
 ```
 
@@ -301,7 +301,7 @@ module.exports = (eleventyConfig) => {
 
 Which would then make the shortcode `postToCodepen` available within your partial. You can include the button with the following updates:
 
-```js
+```twig
 // Set in your code demo file
 {% raw %}{% set slug = page.url %}{% endraw %}
 
@@ -375,7 +375,7 @@ A couple notes:
 
 Then in the partial, remove our previous block that output the HTML `.demo` and replace it with the following:
 
-```js
+```twig
 {% raw %}{% set htmlCode %}{{ '' if hideDemo else html | safe }}{% endset %}{% endraw %}
 
 {% raw %}{% codeDemo css, htmlCode %}{% endraw %}

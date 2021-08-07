@@ -124,7 +124,7 @@ So in this example located in our `posts` directory, we create `posts.json` and 
 
 Now, we can access the `posts` collection within any of our templates:
 
-```js
+```twig
 {% raw %}{% for post in collections.post -%}
 - [{{ post.data.title }}]({{ post.url }})
 {% endfor %}{% endraw %}
@@ -265,7 +265,7 @@ Finally, to add a blog, we'll create a `posts` directory and add `my-first-post`
 
 And back in our `index` we'll loop over the new `posts` collection.
 
-```js
+```twig
 {% raw %}{% for post in collections.post -%}
 - [{{ post.data.title }}]({{ post.url }})
 {% endfor %}{% endraw %}

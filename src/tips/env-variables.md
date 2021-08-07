@@ -31,7 +31,7 @@ module.exports = {
 
 Then you can output the value as demonstrated for the other `meta` keys, or use within templating such as to control whether or not analytics scripts are included:
 
-```js
+```twig
 {% raw %}{% if meta.env == 'prod' %}
 // analytics here
 {% endif %}{% endraw %}

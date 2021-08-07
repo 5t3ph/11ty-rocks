@@ -27,7 +27,7 @@ Then, you can access that data in templates and content by using the filename fi
 
 For example, if I wanted the `siteName` I could access it within Nunjucks as:
 
-```js
+```twig
 {%raw%}{{ meta.siteName }}{%endraw%}
 ```
 

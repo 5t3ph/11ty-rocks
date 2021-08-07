@@ -58,11 +58,11 @@ eleventyConfig.addFilter("randomLimit", (arr, limit, currPage) => {
 
 The `pluck` filter is useful if you want to return a subset of an array based on some known attribute values, such as given an array of titles.
 
-**Usage**:
+**Version 1: Check against a value array**:
 
 {%- raw %}
 
-```md
+```twig
 {%- set pickedPosts %}
 ["Title A", "Title B"]
 {%- endset -%}
@@ -76,5 +76,24 @@ eleventyConfig.addFilter("pluck", function (arr, selections, attr) {
   // Assumes this is receiving a collection, hence the `data`
   // If custom array such as from _data, update accordingly
   return arr.filter((item) => selections.includes(item.data[attr]));
+});
+```
+
+**Version 2: Check against a single attribute**
+
+{%- raw %}
+
+```twig
+// Useful for getting a subset based on a secondary data list
+{% for category in categories %}
+// Then pluck just items in that "category"
+{% for post in collections.all | pluck(category, 'category') %}
+```
+
+{% endraw -%}
+
+```js
+eleventyConfig.addFilter("pluck", function (arr, value, attr) {
+  return arr.filter((item) => item.data[attr] === value);
 });
 ```

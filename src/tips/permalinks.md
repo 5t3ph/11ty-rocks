@@ -10,7 +10,7 @@ date: 2021-02-15
 
 As noted in the [data directory file tips](/tips/data-directory-file/), you may wish for content contained in a directory to actually appear to live off of root:
 
-```md
+```twig
 permalink: "/{%raw%}{{ page.fileSlug }}{%endraw%}/"
 ```
 
@@ -20,7 +20,7 @@ permalink: "/{%raw%}{{ page.fileSlug }}{%endraw%}/"
 
 The following will keep the existing structure based on directory location (provided by `page.filePathStem`), but prepend it with the content's `date`:
 
-```md
+```twig
 permalink: "/{%raw%}{{ page.date }}{%endraw%}/{%raw%}{{ page.filePathStem }}{%endraw%}/"
 ```
 
@@ -34,7 +34,7 @@ Conveniently, front matter data is available to `permalink` so you can actually 
 
 However - you need to use it alongside the `slug` filter to ensure it's URL-formatted.
 
-```md
+```twig
 permalink: "/{%raw%}{{ title | slug }}{%endraw%}/"
 ```
 
