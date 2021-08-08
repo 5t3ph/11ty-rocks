@@ -38,7 +38,7 @@ h2 {
   }
 }
 
-h3 {
+h3:not(.tdbc-card *) {
   color: scale-color(tdbc-color("primary"), $lightness: -65%);
 }
 

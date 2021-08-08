@@ -58,7 +58,7 @@ layout: base.njk
   <article id="{{ resource.data.title | slug }}" class="tdbc-card tdbc-background--texture">
     <div class="tdbc-card__content">
       <span class="tdbc-article__icon" aria-hidden="true">{{ resource.data.icon }}</span>
-      <h2>{{ resource.data.title | safe }}</h2>
+      <h3>{{ resource.data.title | safe }}</h3>
       {{ resource.templateContent | safe }}
       <a href="{{ resource.data.link }}" class="tdbc-button tdbc-button--text">{{ resource.data.linkText }}</a>
     </div>

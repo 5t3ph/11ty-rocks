@@ -49,6 +49,7 @@
     &:nth-of-type(#{$bg-length}n + #{$index}) {
       &,
       h2,
+      h3,
       p,
       ul {
         background-color: tdbc-color($key);
