@@ -2,6 +2,8 @@
 title: "Filter Titles for RSS and Social Shares"
 description: "Replace characters that are often stripped out of post titles by RSS readers and social network link embeds"
 date: 2021-08-08
+meta:
+  authorName: "Ben Myers"
 ---
 
 Sometimes, we want to use characters in our page titles that we can safely escape on our own sites, but which would be stripped out by social networks' link embeds or when pulled up in an RSS reader. For instance, an article called ["&lt;tfoot&gt;: The Table Foot element"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot) is usually stripped down to ": The Table Foot Element" to prevent cross-site scripting. If you use the [`&lt;` and `&gt;` HTML entities](https://developer.mozilla.org/en-US/docs/Glossary/Entity) instead, these same platforms will display your title as "\&lt;tfoot\&gt;: The Table Foot element," which is also not ideal.

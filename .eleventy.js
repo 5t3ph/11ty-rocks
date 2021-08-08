@@ -11,6 +11,8 @@ const socialImages = require("@11tyrocks/eleventy-plugin-social-images");
 const openInCodepen = require("@11tyrocks//eleventy-plugin-open-in-codepen");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setDataDeepMerge(true);
+  
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(openInCodepen, {
