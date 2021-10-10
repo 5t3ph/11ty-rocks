@@ -11,7 +11,7 @@ const openInCodepen = require("@11tyrocks//eleventy-plugin-open-in-codepen");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
-  
+
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(openInCodepen, {
@@ -44,7 +44,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("postDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {
+    return DateTime.fromJSDate(new Date(dateObj), {
       zone: "UTC",
     }).toLocaleString(DateTime.DATE_MED);
   });
@@ -73,6 +73,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("orderedResources", function (collection) {
     return collection.getFilteredByTag("resources").sort((a, b) => {
       return a.data.order - b.data.order;
+    });
+  });
+
+  eleventyConfig.addCollection("communityResources", function (collection) {
+    return collection.getAll()[0].data.community.sort((a, b) => {
+      return b["yyyy-mm-dd"].replace(/-/g, "") - a["yyyy-mm-dd"].replace(/-/g, "");
     });
   });
 

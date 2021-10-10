@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+{% include 'sitenav.njk' %}
+<header class="tdbc-hero tdbc-background--texture tdbc-background--primary">
+  <div class="tdbc-content-maxlength">
+    <h1>{{ title }}</h1>
+    <p class="tdbc-lead">To add yours, check out the <a href="https://github.com/5t3ph/11ty-rocks/blob/main/CONTRIBUTING.md">community contribution guide</a>.</p>
+  </div>
+</header>
+<main id="main" tabindex="-1" class="tdbc-container tdbc-content-maxlength tdbc-mx-auto tdbc-posts">
+  {%- for post in collections.communityResources %}
+    <article id="{{ post.title | slug }}">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <small class="tdbc-meta">{{ post['yyyy-mm-dd'] | postDate }} • <em>By:</em> {{ post.authorName }}</small>
+    </article>
+    {% if loop.index0 == '3' %}
+    <aside role="note">
+    <p><strong>Join us at the next virtual Eleventy Meetup</strong>! <a href="https://11tymeetup.dev/">Check out the upcoming schedule</a> and consider submitting a speaker proposal, too!</p>
+    </aside>
+    {% endif %}
+    {% endfor -%}
+</main>
+{% include 'webring.njk' %}

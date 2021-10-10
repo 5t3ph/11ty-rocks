@@ -203,6 +203,12 @@ hr {
   }
 }
 
+.tdbc-layout--community {
+  h2 {
+    font-size: 1.65rem;
+  }
+}
+
 // stylelint-disable
 eleventy-webring {
   --eleventywr-link-color: #{$tdbc-link-color};
@@ -223,4 +229,14 @@ eleventy-webring {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+[role="note"] {
+  margin: 8vh 0;
+  padding: 2rem;
+  border: 2px dashed tdbc-color("secondary");
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }

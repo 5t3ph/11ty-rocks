@@ -54,11 +54,12 @@
   },
   "browserslist": [
     "> 0.5%",
-    "not IE11"
+    "not IE 11"
   ],
   "dependencies": {
     "@11tyrocks/eleventy-plugin-social-images": "^0.2.0",
     "chrome-aws-lambda": "10.1.0",
+    "fast-glob": "^3.2.7",
     "puppeteer-core": "10.4.0"
   }
 }
