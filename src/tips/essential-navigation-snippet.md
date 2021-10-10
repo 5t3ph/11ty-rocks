@@ -2,6 +2,7 @@
 title: "Essential Navigation Snippet"
 description: "Grab this snippet to quickly add a basic navigation partial that includes highlighting the current page"
 date: 2021-03-09
+updatedOn: 2021-10-09
 ---
 
 The following snippet uses Nunjucks and could be added directly in a layout, or created as a layout partial - ex: `nav.njk`.
@@ -12,7 +13,7 @@ In this example we are looping through the `pages` collection, which you may nee
 
 ```twig
 {%raw%}
-{% set currentUrl %}{{ page.url }}{% endset %}
+{% set currentUrl = page.url %}
 
 <nav>
   <ul role="list">
@@ -20,12 +21,12 @@ In this example we are looping through the `pages` collection, which you may nee
       <a {% if currentUrl === '/' %}aria-current="page"{% endif %} href="/">Home</a>
     </li>
 
-    {% for page in collections.pages %}
+    {% for link in collections.pages %}
     <li>
       <a
-        {% if currentUrl === page.url %}aria-current="page"{% endif %}
-        href="{{ page.url }}">
-          {{ page.data.title }}
+        {% if currentUrl === link.url %}aria-current="page"{% endif %}
+        href="{{ link.url }}">
+          {{ link.data.title }}
       </a>
     </li>
     {%- endfor %}

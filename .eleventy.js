@@ -1,4 +1,3 @@
-const emojiRegex = require("emoji-regex");
 const slugify = require("slugify");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
@@ -35,14 +34,10 @@ module.exports = function (eleventyConfig) {
       return;
     }
 
-    const regex = emojiRegex();
-    // Remove Emoji first
-    let string = str.replace(regex, "");
-
-    return slugify(string, {
+    return slugify(str, {
       lower: true,
-      replacement: "-",
-      remove: /[*+~·,()'"`´%!?¿:@\/]/g,
+      strict: true,
+      remove: /["]/g,
     });
   });
 
@@ -122,23 +117,45 @@ ${htmlCode}
 </div>`;
   });
 
+  const linkAfterHeader = markdownItAnchor.permalink.linkAfterHeader({
+    class: "tdbc-anchor",
+    symbol: "<span hidden>#</span>",
+    style: "aria-labelledby",
+  });
+  const markdownItAnchorOptions = {
+    level: [1, 2, 3],
+    slugify: (str) =>
+      slugify(str, {
+        lower: true,
+        strict: true,
+        remove: /["]/g,
+      }),
+    permalink(slug, opts, state, idx) {
+      state.tokens.splice(
+        idx,
+        0,
+        Object.assign(new state.Token("div_open", "div", 1), {
+          attrs: [["class", "heading-wrapper"]],
+          block: true,
+        })
+      );
+
+      state.tokens.splice(
+        idx + 4,
+        0,
+        Object.assign(new state.Token("div_close", "div", -1), {
+          block: true,
+        })
+      );
+
+      linkAfterHeader(slug, opts, state, idx + 1);
+    },
+  };
+
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
     html: true,
-  }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "tdbc-anchor",
-    permalinkSymbol: "#",
-    permalinkSpace: false,
-    permalinkBefore: true,
-    level: [1, 2],
-    slugify: (s) =>
-      s
-        .trim()
-        .toLowerCase()
-        .replace(/[\s+~\/]/g, "-")
-        .replace(/[().`,%·'"!?¿:@*]/g, ""),
-  });
+  }).use(markdownItAnchor, markdownItAnchorOptions);
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   eleventyConfig.setBrowserSyncConfig({

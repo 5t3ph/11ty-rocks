@@ -2,21 +2,6 @@
   max-width: 80ch;
 }
 
-.tdbc-anchor {
-  display: inline-block;
-  margin-left: 0.25em;
-  transition: 180ms opacity ease-in-out;
-  opacity: 0.6;
-  font-size: 0.65em;
-  vertical-align: top;
-  float: left;
-  margin-left: -1.75rem;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
 $tdbc-alignments: left, center, right !default;
 
 @each $alignment in $tdbc-alignments {

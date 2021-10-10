@@ -1,21 +1,37 @@
+{% set currentUrl = page.url %}
+{% set navLinks = [
+  {
+    "url": "/#resources",
+    "title": "Resources"
+  },
+  {
+    "url": "/posts/",
+    "title": "Posts"
+  },
+  {
+    "url": "/tips/",
+    "title": "Quick Tips"
+  },
+  {
+    "url": "/eleventyjs/",
+    "title": "Config Samples"
+  }
+] %}
 <nav aria-labelledby="tdbc-siteid" class="tdbc-sitenav">
   <div class="tdbc-sitenav__container">
     <span class="tdbc-text-center">
       <a id="tdbc-siteid" href="/">{{ meta.siteName }}</a>
     </span>
     <ul class="tdbc-sitenav__navlist tdbc-list-unstyled">
-      <li>
-        <a href="/#resources">Resources</a>
-      </li>
-      <li>
-        <a href="{{ '/posts/' | url }}">Posts</a>
-      </li>
-      <li>
-        <a href="{{ '/eleventyjs/' | url }}">Config Samples</a>
-      </li>
-      <li>
-        <a href="{{ '/tips/' | url }}">Quick Tips</a>
-      </li>
+      {% for link in navLinks %}
+        <li>
+          <a
+            {% if currentUrl === link.url %}aria-current="page"{% endif %}
+            href="{{ link.url }}">
+              {{ link.title }}
+          </a>
+        </li>
+      {%- endfor %}
     </ul>
   </div>
 </nav>

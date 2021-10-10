@@ -4,7 +4,9 @@ description: "Learn how to change content output's file type and/or location wit
 date: 2021-02-15
 ---
 
-> The following techniques are applied via front matter. The **base file** that you are using to create the altered content can use any of Eleventy's templating languages, and use all the features that language provides. For example, you could use Nunjucks or Liquid and loop through a collection to create JSON output.
+> The following techniques are applied via front matter.
+
+The **base file** that you are using to create the altered content can use any of Eleventy's templating languages, and use all the features that language provides. For example, you could use Nunjucks or Liquid and loop through a collection to create JSON output.
 
 ## Change Content's Output File Type
 

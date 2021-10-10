@@ -32,9 +32,37 @@ h2 {
   transition: 120ms ease-in;
 }
 
-@media (max-width: 100ch) {
-  .tdbc-layout--post h2 {
-    margin-left: 1.5rem;
+.heading-wrapper {
+  display: flex;
+  align-items: flex-start;
+
+  @media (min-width: 100ch) {
+    margin-left: -1.75rem;
+  }
+
+  .tdbc-anchor {
+    order: -1;
+    margin-right: 0.75rem;
+    transition: 180ms opacity ease-in-out;
+    opacity: 0.6;
+    font-size: 1.75rem;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    [hidden] {
+      display: block;
+    }
+  }
+}
+
+h2,
+h3 {
+  &[id] {
+    &:focus {
+      outline: none;
+    }
   }
 }
 
