@@ -4,7 +4,7 @@ icon: 🛠
 link: https://github.com/5t3ph/eleventy-plugin-template
 linkText: Build Your Plugin
 category: plugin
-order: 4
+order: 1
 date: 2020-10-31
 ---
 

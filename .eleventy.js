@@ -138,12 +138,14 @@ ${htmlCode}
         strict: true,
         remove: /["]/g,
       }),
+    tabIndex: false,
     permalink(slug, opts, state, idx) {
       state.tokens.splice(
         idx,
         0,
         Object.assign(new state.Token("div_open", "div", 1), {
-          attrs: [["class", "heading-wrapper"]],
+          // Add class "header-wrapper [h1 or h2 or h3]"
+          attrs: [["class", `heading-wrapper ${state.tokens[idx].tag}`]],
           block: true,
         })
       );

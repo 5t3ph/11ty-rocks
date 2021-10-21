@@ -2,7 +2,7 @@
 title: "11ty Slugs and Anchors"
 description: "Extend the default `slug` filter and enable accessible heading anchors."
 date: 2020-11-23
-updatedOn: 2021-10-09
+updatedOn: 2021-10-21
 ---
 
 ## `slug` Filter Extension
@@ -61,12 +61,14 @@ const markdownItAnchorOptions = {
       strict: true,
       remove: /["]/g,
     }),
+  tabIndex: false,
   permalink(slug, opts, state, idx) {
     state.tokens.splice(
       idx,
       0,
       Object.assign(new state.Token("div_open", "div", 1), {
-        attrs: [["class", "heading-wrapper"]],
+        // Add class "header-wrapper [h1 or h2 or h3]"
+        attrs: [["class", `heading-wrapper ${state.tokens[idx].tag}`]],
         block: true,
       })
     );
@@ -95,8 +97,8 @@ eleventyConfig.setLibrary("md", markdownLibrary);
 **Example output**:
 
 ```html
-<div class="heading-wrapper">
-  <h2 id="enable-anchor-links-on-content-headings" tabindex="-1">Enable anchor links on content headings</h2>
+<div class="heading-wrapper h2">
+  <h2 id="enable-anchor-links-on-content-headings">Enable anchor links on content headings</h2>
   <a
     class="tdbc-anchor"
     href="#enable-anchor-links-on-content-headings"
