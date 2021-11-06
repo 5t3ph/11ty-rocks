@@ -1,3 +1,6 @@
+// stylelint-disable max-nesting-depth
+
+@use "./theme" as *;
 @use "sass:math";
 
 .tdbc-button {
@@ -27,10 +30,9 @@
   &:focus {
     outline-color: transparent;
     outline-style: solid;
-    box-shadow: 0 0 0 1px rgba(#fff, 0.3), 0 0 0 3px scale-color(tdbc-color("primary"), $lightness: -30%);
+    box-shadow: 0 0 0 1px rgb(#fff, 0.3), 0 0 0 3px scale-color(tdbc-color("primary"), $lightness: -30%);
   }
 
-  // stylelint-disable max-nesting-depth
   @each $key in $tdbc-button-variants {
     $color: tdbc-color($key);
 
@@ -48,7 +50,6 @@
       }
     }
   }
-  // stylelint-enable
 
   &--small {
     min-height: 34px;
@@ -80,22 +81,20 @@
   font-size: 1.5rem;
   cursor: pointer;
 
-  // stylelint-disable-next-line selector-max-type
   svg {
     flex-shrink: 0;
     width: 100%;
     height: 100%;
     fill: currentColor;
-    opacity: 0.7;
+    opacity: 70%;
   }
 
   &:focus,
   &:hover {
     outline: 2px solid transparent;
 
-    // stylelint-disable-next-line selector-max-type
     svg {
-      opacity: 1;
+      opacity: 100%;
     }
   }
 
@@ -108,7 +107,7 @@
       left: -0.3em;
       border: 2px solid currentColor;
       border-radius: 50%;
-      opacity: 0.7;
+      opacity: 70%;
       content: "";
     }
   }

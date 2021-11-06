@@ -1,3 +1,5 @@
+@use "./theme" as *;
+
 h1,
 h2,
 h3 {
@@ -44,11 +46,11 @@ h2 {
     order: -1;
     margin-right: 0.75rem;
     transition: 180ms opacity ease-in-out;
-    opacity: 0.6;
+    opacity: 60%;
     font-size: 1.75rem;
 
     &:hover {
-      opacity: 1;
+      opacity: 100%;
     }
 
     [hidden] {
@@ -83,6 +85,7 @@ p {
   line-height: 1.6;
 }
 
+// stylelint-disable
 article {
   > ul,
   > ol {
@@ -97,6 +100,7 @@ article {
     }
   }
 }
+// stylelint-enable
 
 strong {
   font-weight: $tdbc-strong-font-weight;
@@ -117,7 +121,7 @@ a:not([class*="button"]) {
   }
 
   &:hover {
-    background-color: rgba($tdbc-link-color, 0.08);
+    background-color: rgb($tdbc-link-color, 0.08);
   }
 
   code:not([class*="language"]) {
@@ -136,16 +140,18 @@ blockquote {
   }
 }
 
+// stylelint-disable-next-line no-descending-specificity
 code:not([class*="language"]) {
   display: inline-flex;
   padding: 0.15em;
-  background-color: rgba(tdbc-color("light"), 0.5);
+  background-color: rgb(tdbc-color("light"), 0.5);
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1.75ex;
   line-height: 1.1;
   color: tdbc-color("text");
 }
 
+// stylelint-disable-next-line no-descending-specificity
 pre code:not([class*="language"]) {
   width: 100%;
   max-width: calc(100vw - 2rem);

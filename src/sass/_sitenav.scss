@@ -1,9 +1,10 @@
-// stylelint-disable-next-line selector-max-id, selector-max-specificity
+@use "./theme" as *;
+
+// stylelint-disable-next-line
 #tdbc-siteid {
   font-size: tdbc-type-size(h3);
 }
 
-// stylelint-disable selector-max-type, function-name-case
 .tdbc-sitenav {
   background-color: tdbc-color("primary");
 
@@ -44,7 +45,6 @@
 
     li a {
       margin: 0 0.5rem;
-      // stylelint-disable-next-line
       font-size: clamp(0.9rem, 4vw, 1.15rem);
     }
 
@@ -57,7 +57,6 @@
   a:not(.tdbc-button) {
     color: tdbc-color("text");
     text-underline-offset: 0.1em;
-    text-decoration-color: rgba(tdbc-color("text"), 0.6);
+    text-decoration-color: rgb(tdbc-color("text"), 0.6);
   }
 }
-// stylelint-enable

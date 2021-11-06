@@ -1,3 +1,5 @@
+@use "./theme" as *;
+
 /**
  * a11y-dark theme for JavaScript, CSS, and HTML
  * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
@@ -30,7 +32,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: rgba(tdbc-color("light"), 0.5);
+  background: rgb(tdbc-color("light"), 0.5);
 }
 
 /* Inline code */

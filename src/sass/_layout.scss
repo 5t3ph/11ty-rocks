@@ -1,4 +1,5 @@
-// stylelint-disable-next-line selector-max-type
+@use "./theme" as *;
+
 body {
   display: flex;
   flex-direction: column;
@@ -8,7 +9,6 @@ body {
   font-family: $tdbc-font-family;
 }
 
-// stylelint-disable selector-max-type, selector-no-qualifying-type
 main.tdbc-container {
   padding-top: 10vh;
   padding-bottom: 10vh;
@@ -22,6 +22,13 @@ footer {
   margin-top: auto;
 }
 
+.tdbc-layout--community {
+  h2 {
+    font-size: 1.65rem;
+  }
+}
+
+// stylelint-disable no-descending-specificity
 article {
   max-width: 80ch;
 
@@ -45,7 +52,7 @@ article {
       padding: 0.15em;
       border-bottom: 1px dotted tdbc-color("text");
       border-radius: $tdbc-border-radius $tdbc-border-radius 0 0;
-      background-color: rgba(tdbc-color("text"), 0.15);
+      background-color: rgb(tdbc-color("text"), 0.15);
       font-style: italic;
       font-weight: bold;
       text-align: center;
@@ -57,6 +64,7 @@ article {
     margin-top: 3rem;
   }
 }
+// stylelint-enable
 
 aside {
   margin-top: 10vh;
@@ -75,7 +83,6 @@ hr {
 .tdbc-posts article + article {
   margin-top: 5vh;
 }
-// stylelint-enable
 
 .tdbc-article__icon {
   display: block;
@@ -108,7 +115,6 @@ hr {
   padding-bottom: 10vh;
   text-align: center;
 
-  // stylelint-disable selector-max-universal
   > * {
     padding: 1rem;
     background-color: tdbc-color(primary);
@@ -147,10 +153,9 @@ hr {
   margin-bottom: 2rem;
   padding-bottom: 56.25%;
   border-radius: 7px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.27);
+  box-shadow: 0 3px 8px rgb(black, 0.27);
   overflow: hidden;
 
-  // stylelint-disable-next-line
   iframe {
     position: absolute;
     top: 0;
@@ -203,13 +208,6 @@ hr {
   }
 }
 
-.tdbc-layout--community {
-  h2 {
-    font-size: 1.65rem;
-  }
-}
-
-// stylelint-disable
 eleventy-webring {
   --eleventywr-link-color: #{$tdbc-link-color};
 

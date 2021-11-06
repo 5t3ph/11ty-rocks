@@ -1,19 +1,18 @@
-@import "theme";
-@import "reset";
-@import "typography";
-@import "layout";
-@import "utilities";
+@use "theme" as *;
+@use "reset";
+@use "typography";
+@use "layout";
+@use "utilities";
 
 @font-face {
   font-family: "Arbutus Slab";
   font-style: normal;
+  // stylelint-disable-next-line font-weight-notation
   font-weight: 400;
   src: local("Arbutus Slab Regular"), local("ArbutusSlab-Regular"),
     url("../src/fonts/arbutus-slab-v9-latin-regular.woff2") format("woff2");
   font-display: swap;
 }
-
-// stylelint-disable
 
 body {
   display: grid;
