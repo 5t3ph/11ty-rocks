@@ -47,7 +47,7 @@ So, our first step is to create a location for our code demos to live. Add `src/
 }
 ```
 
-This is a _data directory file_ and we define `tags` to create the `demos` collection. Then we set `permalink` to `false` to prevent page generation. These values will apply to all content within the directory, although you could still set front matter to override them for specific content.
+This is a _directory data file_ and we define `tags` to create the `demos` collection. Then we set `permalink` to `false` to prevent page generation. These values will apply to all content within the directory, although you could still set front matter to override them for specific content.
 
 ## Create a Demo File
 
@@ -238,7 +238,7 @@ Resulting in only the details/summary appearing:
 
 Now that we have our demo code files and partial figured out, it's time to figure out how to display this content. Remember - we turned off the default file system individual page creation.
 
-We also had created a collection called `demos` when we defined the data directory file by assigning all of the files the tag of `demos`.
+We also had created a collection called `demos` when we defined the directory data file by assigning all of the files the tag of `demos`.
 
 However, that collection will currently be date based as is the 11ty default. Since we want it based off the `order` front matter, we need to create a custom collection.
 

@@ -1,18 +1,18 @@
 ---
-title: "Data Directory File"
+title: "Directory Data File"
 description: "Quickly assign settings to a collection instead of repeating the info in each content's front matter."
 date: 2021-02-15
 ---
 
-## Create a Data Directory File
+## Create a Directory Data File
 
-To create a data directory file, add a `json` file within your directory with the same name as the directory.
+To create a directory data file, add a `json` file within your directory with the same name as the directory.
 
 For example, within `/posts/` create `posts.json`.
 
 ## Assign Tags and Layout
 
-Most often, I use data directory files to quickly create collections via `tags` and also to assign all the directory content to a layout.
+Most often, I use directory data files to quickly create collections via `tags` and also to assign all the directory content to a layout.
 
 ```json
 {

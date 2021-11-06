@@ -4,11 +4,11 @@ description: "Examples of common ways to modify permalink structure."
 date: 2021-02-15
 ---
 
-> Often permalinks are changed via front matter, but you may wish to apply permalink changes in a [data directory file](/tips/data-directory-file/) so that the change will apply to all content within a directory at once.
+> Often permalinks are changed via front matter, but you may wish to apply permalink changes in a [directory data file](/tips/data-directory-file/) so that the change will apply to all content within a directory at once.
 
 ## Remove Directory Prefix
 
-As noted in the [data directory file tips](/tips/data-directory-file/), you may wish for content contained in a directory to actually appear to live off of root:
+As noted in the [directory data file tips](/tips/data-directory-file/), you may wish for content contained in a directory to actually appear to live off of root:
 
 ```twig
 permalink: "/{%raw%}{{ page.fileSlug }}{%endraw%}/"

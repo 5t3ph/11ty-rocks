@@ -20,7 +20,7 @@ Let's imagine our scenario is a site where we'll provide book reviews.
 
 For ease of accessing our review content data, we'll create a collection.
 
-In your input directory, create the `reviews` directory, and then inside of that create the file `reviews.json` which will be a [data directory file](/tips/data-directory-file/).
+In your input directory, create the `reviews` directory, and then inside of that create the file `reviews.json` which will be a [directory data file](/tips/data-directory-file/).
 
 ```json
 {
@@ -36,7 +36,7 @@ With only the previous step in place, if Eleventy is running and you add a file 
 
 Since our intention is to use this content as data, we need to prevent this page generation.
 
-Preventing generation of files in the site's `output` directory is handled by setting `permalink: false`, so we'll update our data directory file:
+Preventing generation of files in the site's `output` directory is handled by setting `permalink: false`, so we'll update our directory data file:
 
 ```json
 {

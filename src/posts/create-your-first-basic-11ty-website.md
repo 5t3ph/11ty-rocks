@@ -195,7 +195,7 @@ Once you've added both a title and some content, on save you should nearly insta
 
 ### Optional: Modify the Blog Post Permalinks
 
-One other way we can use our data directory file is to set an altered permalink structure. "Permalink" is the term for the URL path that follows your domain (maybe you've also heard this called a "slug").
+One other way we can use our directory data file is to set an altered permalink structure. "Permalink" is the term for the URL path that follows your domain (maybe you've also heard this called a "slug").
 
 Just as an example, let's use the 11ty supplied page variable of `fileSlug` and tell 11ty to drop the `blog/` from the front of the URL and just use the file name as the permalink value. Here is the update ot our `src/blog/blog.json` file:
 

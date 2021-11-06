@@ -14,7 +14,7 @@ The preferred way to do this is via permalink:
 permalink: false
 ```
 
-If you want this to apply to an entire collection, you can do this in a [data directory file](). This example is used for this very site to create the resource content on the home page:
+If you want this to apply to an entire collection, you can do this in a [directory data file](/tips/data-directory-file). This example is used for this very site to create the resource content on the home page:
 
 ```json
 {
