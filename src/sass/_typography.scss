@@ -2,7 +2,10 @@
 
 h1,
 h2,
-h3 {
+.h2,
+h3,
+.h3,
+h4 {
   font-family: $tdbc-headline-font-family;
   line-height: calc(2px + 2ex + 2px);
   margin-bottom: 0.65em;
@@ -14,6 +17,7 @@ $tdbc-type-styles: (
   h1: 4rem,
   h2: 2.5rem,
   h3: 1.75rem,
+  h4: 1.35rem,
 );
 
 @function tdbc-type-size($key) {
@@ -21,7 +25,8 @@ $tdbc-type-styles: (
 }
 
 @each $level, $size in $tdbc-type-styles {
-  #{$level} {
+  #{$level},
+  .#{$level} {
     font-size: $size;
 
     @if ($level == h1) {
@@ -47,7 +52,8 @@ h2 {
     margin-right: 0.75rem;
     transition: 180ms opacity ease-in-out;
     opacity: 60%;
-    font-size: 1.75rem;
+    font-size: 0.7em;
+    line-height: 1.25;
 
     &:hover {
       opacity: 100%;
@@ -68,7 +74,8 @@ h3 {
   }
 }
 
-h3:not(.tdbc-card *) {
+h3:not(.tdbc-card *),
+h4 {
   color: scale-color(tdbc-color("primary"), $lightness: -65%);
 }
 
@@ -95,8 +102,21 @@ article {
   }
 
   * {
-    + h3 {
+    + .h2 {
+      margin-top: 3rem;
+    }
+  }
+
+  * {
+    + .h3 {
       margin-top: 2rem;
+    }
+  }
+
+  .h2,
+  .h3 {
+    + blockquote {
+      margin-top: 0;
     }
   }
 }
@@ -156,6 +176,11 @@ pre code:not([class*="language"]) {
   width: 100%;
   max-width: calc(100vw - 2rem);
   overflow-x: auto;
+}
+
+p > small:only-child {
+  display: block;
+  line-height: 1.3;
 }
 
 .tdbc-lead {

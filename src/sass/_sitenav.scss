@@ -1,8 +1,11 @@
 @use "./theme" as *;
+@use "./typography" as *;
 
 // stylelint-disable-next-line
 #tdbc-siteid {
   font-size: tdbc-type-size(h3);
+  font-family: $tdbc-headline-font-family;
+  font-weight: 600;
 }
 
 .tdbc-sitenav {
