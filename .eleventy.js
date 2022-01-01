@@ -71,9 +71,12 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("orderedResources", function (collection) {
-    return collection.getFilteredByTag("resources").sort((a, b) => {
-      return a.data.order - b.data.order;
-    });
+    return collection
+      .getFilteredByTag("resources")
+      .filter((p) => !p.data.tags.includes("links"))
+      .sort((a, b) => {
+        return a.data.order - b.data.order;
+      });
   });
 
   eleventyConfig.addCollection("communityResources", function (collection) {
