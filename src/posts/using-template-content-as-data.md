@@ -72,7 +72,7 @@ You may choose to create this loop within your index file, such as `index.njk`, 
 
 Our Nunjucks loop might then look as follows for accessing the book reviews:
 
-{%raw-%}
+{% raw %}
 
 ```twig
 {% for review in collections.reviews %}
@@ -89,7 +89,7 @@ Our Nunjucks loop might then look as follows for accessing the book reviews:
 {% endfor %}
 ```
 
-{%-endraw%}
+{% endraw %}
 
 Let's examine a few key aspects of that loop for successfully accessing and outputting the data as content:
 
