@@ -42,7 +42,7 @@ We'll update both of our scripts to inject an environment variable called `ELEVE
 
 Within `.eleventy.js` - [the Eleventy config file](https://www.11ty.dev/docs/config/) - we'll add just a few lines.
 
-An `if` statement will check for whether our "prod" environment variable is available, and if so, we'll use Eleventy's `ignore` feature to exclude our `__docs` directory. This effectively prevents those files from building.
+An `if` statement will check for whether our "prod" environment variable is available, and if so, we'll use [Eleventy's `ignore` feature](https://www.11ty.dev/docs/ignores/) to exclude our `__docs` directory. This effectively prevents those files from building.
 
 ```js
 if (process.env.ELEVENTY_ENV === "prod") {
