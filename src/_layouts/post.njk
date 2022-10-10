@@ -19,6 +19,12 @@ layout: base.njk
     {{ content | safe }}
   </article>
 
+  {% if meta.authorBio %}
+  <aside role="note" class="tdbc-mx-auto tdbc-content-maxlength">
+    {{ meta.authorBio | markdown | safe }}
+  </aside>
+  {% endif %}
+
   {% if tags | hasTag('eleventyjs') %}
   <a href="/eleventyjs/" class="tdbc-button tdbc-button--text tdbc-mx-auto tdbc-mt">View more config samples</a>
   {% endif %}

@@ -1,5 +1,16 @@
 const slugify = require("slugify");
 const { DateTime } = require("luxon");
+// Add above your Eleventy config
+const markdownIt = require("markdown-it");
+
+// Add within your config module
+const md = new markdownIt({
+  html: true,
+});
+
+const markdown = (content) => {
+  return md.render(content);
+};
 
 const slug = (str) => {
   if (!str) {
@@ -45,6 +56,7 @@ const pluck = (arr, attr, value) => {
 };
 
 module.exports = {
+  markdown,
   slug,
   postDate,
   excerpt,
