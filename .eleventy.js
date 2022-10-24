@@ -6,12 +6,14 @@ const slugify = require("slugify");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 const socialImages = require("@11tyrocks/eleventy-plugin-social-images");
 const openInCodepen = require("@11tyrocks//eleventy-plugin-open-in-codepen");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(pluginWebc);
   eleventyConfig.addPlugin(emojiReadTime);
   eleventyConfig.addPlugin(socialImages);
   eleventyConfig.addPlugin(syntaxHighlight);
