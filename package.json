@@ -29,7 +29,7 @@
     "url": "https://github.com/5t3ph/11ty-rocks/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.16",
+    "@11ty/eleventy": "^2.0.0-canary.23",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@11ty/eleventy-plugin-webc": "^0.5.1",
