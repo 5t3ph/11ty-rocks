@@ -40,21 +40,6 @@ One issue that caught me by surprise during `--serve` is that `addPassthroughCop
 eleventyConfig.setServerPassthroughCopyBehavior("copy");
 ```
 
-Also, defining layout files will now [require including the layout file extension](https://www.11ty.dev/docs/layouts/#omitting-the-layouts-file-extension). This is due to the slowness of determining which file is actually meant to be used when no extension is included.
-
-```markdown
----
-layout: base <- will break in v2
-layout: base.njk <- v2+ - always add file extension
----
-```
-
-There is the option to revert this behavior by setting the following:
-
-```js
-eleventyConfig.setLayoutResolution(false);
-```
-
 ## Configuration, Build, and Serve
 
 First up, there are now new options for naming your [Eleventy config file](https://www.11ty.dev/docs/config/#default-filenames).
@@ -117,6 +102,15 @@ Here are some quick hits that may impact how you create content with Eleventy:
 - pagination option to [allow empty pages](https://www.11ty.dev/docs/pagination/#generating-an-empty-results-page) when no data is available
 - [map one URL to multiple files](https://www.11ty.dev/docs/permalinks/#mapping-one-url-to-multiple-files-for-internationalization), useful for scenarios like internationalization
 - Markdown processing by default now has [disabled indented code blocks](https://www.11ty.dev/docs/languages/markdown/#indented-code-blocks)
+
+Also, when defining layout files, it is now [strongly recommended to include the layout file extension](https://www.11ty.dev/docs/layouts/#omitting-the-layouts-file-extension). This is due to the slowness of determining which file is actually meant to be used when no extension is included.
+
+```text
+---
+layout: base <- no longer recommended
+layout: base.njk <- best practice: always add file extension
+---
+```
 
 ## What You Missed From v1.0.0
 
