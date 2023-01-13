@@ -1,6 +1,6 @@
 ---
 title: "New Features and Upgrade Considerations for Eleventy v2.0.0"
-description: "Review major feature releases, breaking changes, and various enhancements to prepare for the v2 stable release of 11ty."
+description: "Review major feature additions, breaking changes, and various enhancements to prepare for the v2 stable release of 11ty."
 date: 2023-01-12
 templateEngineOverride: md, njk
 ---
