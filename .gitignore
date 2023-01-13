@@ -16,3 +16,6 @@ social/*
 
 #IDE
 .idea
+
+# Local Netlify folder
+.netlify
