@@ -140,4 +140,4 @@ Here are several other key updates from Eleventy v1.0.0:
 
 ---
 
-Whew, that was a lot! Go forth and enjoy building with these new and updated Eleventy features! **PS - if you're new to Eleventy**, check out my guide to [creating your first basic 11ty website](http://localhost:8888/posts/create-your-first-basic-11ty-website/).
+Whew, that was a lot! Go forth and enjoy building with these new and updated Eleventy features! **PS - if you're new to Eleventy**, check out my guide to [creating your first basic 11ty website](/posts/create-your-first-basic-11ty-website/).
