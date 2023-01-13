@@ -112,6 +112,18 @@ layout: base.njk <- best practice: always add file extension
 ---
 ```
 
+## Upgrading to v2.0.0
+
+The top three things that may impact your current projects are:
+
+- the [breaking change](#breaking-changes) to `addPassthroughCopy`
+- changing [collection data references](#collections-filters-and-shortcodes) like `url` to be based off of `page` and updating `templateContent` to `content`
+- [including the file extension](#content-creation) when you define a layout, ex `layout: base.njk` instead of `layout: base`
+
+And, perhaps you may want to [change the name of your Eleventy config](#configuration-build-and-serve).
+
+There's also an upgrade plugin available: [eleventy-upgrade-help](https://github.com/11ty/eleventy-upgrade-help)
+
 ## What You Missed From v1.0.0
 
 I started using Eleventy at version 0.10.0 in April 2020, and v1.0.0 stable was released a year and a half later, on [January 9, 2022](https://www.11ty.dev/blog/eleventy-one-point-oh/). If you also did most of your learning with Eleventy before v1 and haven’t updated things or built new in a while, there’s a good chance you missed some of the following!
