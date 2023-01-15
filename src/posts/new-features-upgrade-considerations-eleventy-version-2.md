@@ -34,7 +34,13 @@ Check out these posts from 11ty Rocks to learn more about WebC use cases and fea
 
 ## Breaking Changes
 
-One issue that caught me by surprise during `--serve` is that `addPassthroughCopy` will no longer copy files to the output directory. This includes on the first build when you fire up local dev with `--serve` and ignoring new files you add in a passthrough directory. If you want to revert this behavior, the escape hatch is [setServerPassthroughCopyBehavior](https://www.11ty.dev/docs/copy/#passthrough-during-serve).
+One issue that caught me by surprise during `--serve` is that `addPassthroughCopy` will no longer copy files to the output directory. This includes on the first build when you fire up local dev with `--serve` and new files you add in a passthrough directory.
+
+**Important to note:** While the files are no longer physically copied to your output directory during `--serve`, they are still available to your local build. In other words, if you have an `img` directory setup for `addPassthroughCopy` and you add an image during local dev, you can use it in a template and it will show up on the page as you would expect. The new behavior is _emulated_ which means the files are served directly from your input directory. This speeds things up because it doesn't require a build when you change or add passthrough files.
+
+So, you will likely only need to revert this if you are copying through files that other processes depend on. For instance, maybe you are referencing a file for your serverless build or a plugin requires a precise and real file path from your final output.
+
+To restore copying of files to your output folder even during `--serve`, use [setServerPassthroughCopyBehavior](https://www.11ty.dev/docs/copy/#passthrough-during-serve).
 
 ```js
 eleventyConfig.setServerPassthroughCopyBehavior("copy");
@@ -116,7 +122,7 @@ layout: base.njk <- best practice: always add file extension
 
 The top three things that may impact your current projects are:
 
-- the [breaking change](#breaking-changes) to `addPassthroughCopy`
+- the change to `addPassthroughCopy` _only if_ it [meets the conditions](#breaking-changes) where it would have an impact
 - changing [collection data references](#collections-filters-and-shortcodes) like `url` to be based off of `page` and updating `templateContent` to `content`
 - [including the file extension](#content-creation) when you define a layout, ex `layout: base.njk` instead of `layout: base`
 
