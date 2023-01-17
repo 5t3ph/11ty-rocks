@@ -34,17 +34,7 @@ Check out these posts from 11ty Rocks to learn more about WebC use cases and fea
 
 ## Breaking Changes
 
-One issue that caught me by surprise during `--serve` is that `addPassthroughCopy` will no longer copy files to the output directory. This includes on the first build when you fire up local dev with `--serve` and new files you add in a passthrough directory.
-
-**Important to note:** While the files are no longer physically copied to your output directory during `--serve`, they are still available to your local build. In other words, if you have an `img` directory setup for `addPassthroughCopy` and you add an image during local dev, you can use it in a template and it will show up on the page as you would expect. The new behavior is _emulated_ which means the files are served directly from your input directory. This speeds things up because it doesn't require a build when you change or add passthrough files.
-
-So, you will likely only need to revert this if you are copying through files that other processes depend on. For instance, maybe you are referencing a file for your serverless build or a plugin requires a precise and real file path from your final output.
-
-To restore copying of files to your output folder even during `--serve`, use [setServerPassthroughCopyBehavior](https://www.11ty.dev/docs/copy/#passthrough-during-serve).
-
-```js
-eleventyConfig.setServerPassthroughCopyBehavior("copy");
-```
+None! [A proposed breaking change](https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve) to `addPassthroughCopy` was reversed.
 
 ## Configuration, Build, and Serve
 
@@ -65,6 +55,8 @@ Various enhancements landed for [incremental builds](https://www.11ty.dev/docs/u
 
 - **Layouts** - a change rebuilds any templates using that layout
 - **Collections** - adding or deleting a tag from a template will rebuild any related templates
+
+To make local dev even faster, you may wish to [opt-in to emulated passthrough file copying](https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve) for faster local builds. Note that opting-in may have breaking behavior if you are copying through files that other processes depend on. For instance, maybe you are referencing a file for your serverless build or a plugin requires a precise and real file path from your final output. In that case, simply do not opt-in to this feature.
 
 A new command line flag of `--ignore-initial` will [run Eleventy without an initial build](https://www.11ty.dev/docs/usage/#ignore-initial-to-run-eleventy-without-an-initial-build).
 
@@ -120,9 +112,8 @@ layout: base.njk <- best practice: always add file extension
 
 ## Upgrading to v2.0.0
 
-The top three things that may impact your current projects are:
+The top two things that may impact your current projects are:
 
-- the change to `addPassthroughCopy` _only if_ it [meets the conditions](#breaking-changes) where it would have an impact
 - changing [collection data references](#collections-filters-and-shortcodes) like `url` to be based off of `page` and updating `templateContent` to `content`
 - [including the file extension](#content-creation) when you define a layout, ex `layout: base.njk` instead of `layout: base`
 
