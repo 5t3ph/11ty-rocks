@@ -5,11 +5,13 @@ date: 2023-01-12
 templateEngineOverride: md, njk
 ---
 
-The countdown has begun [on the Eleventy docs](https://11ty.dev) for version 2.0.0 (or at least, that’s probably what the countdown is about 😉)! Canaries have been available for quite some time, and creator Zach Leatherman has helpfully been updating the docs by adding labels to note when a feature became available.
+2.0.0 canaries have been available for quite some time, and creator Zach Leatherman has helpfully been updating the docs by adding labels to note when a feature became available.
+
+> The [2.0.0 Beta release](https://www.11ty.dev/blog/eleventy-v2-beta/) is available as of January 18, 2023, which includes the changes noted in this article.
 
 Recently, I set out to create a new Eleventy project for the first time in a few months using the latest Canary and hit some unexpected errors. That led me down the rabbit hole to see what exactly had changed so I could be prepared to update projects, especially as I use similar setups cross-project and maintain a few 11ty starters.
 
-If you’re reading this prior to the v2.0.0 stable release being complete, install the latest Canary to try out these features: `npm i @11ty/eleventy@canary`
+If you’re reading this prior to the v2.0.0 stable release being complete, install the latest Beta to try out these features: `npm i @11ty/eleventy@beta`
 
 I’ll update this list if anything else squeaks in for the stable release. This may not be 100% comprehensive, but it includes the most impactful highlights for general use of 11ty.
 
@@ -34,7 +36,9 @@ Check out these posts from 11ty Rocks to learn more about WebC use cases and fea
 
 ## Breaking Changes
 
-None! [A proposed breaking change](https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve) to `addPassthroughCopy` was reversed.
+[A few minor changes](https://www.11ty.dev/blog/eleventy-v2-beta/#breaking-changes) as noted in the beta release notes, which Zach recommends using the [eleventy-upgrade-helper plugin](https://github.com/11ty/eleventy-upgrade-help) to discover whether your site is impacted.
+
+Update from an earlier version of this post: [a proposed breaking change](https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve) to `addPassthroughCopy` was reversed.
 
 ## Configuration, Build, and Serve
 
