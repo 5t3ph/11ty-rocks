@@ -1,6 +1,6 @@
 ---
 title: "11ty Community Links: January 2023"
-description: "11 nifty resources from the Eleventy community, including CSS and JS processing, sharing WebC components, and organization the config."
+description: "11 nifty resources from the Eleventy community, including CSS and JS processing, sharing WebC components, and organizing the config."
 date: 2023-01-21
 ---
 
