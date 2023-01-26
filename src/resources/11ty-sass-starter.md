@@ -4,7 +4,7 @@ icon: 💀
 link: https://github.com/5t3ph/11ty-sass-skeleton
 linkText: Get the Starter
 category: starter
-order: 3
+order: 1
 date: 2020-10-20
 ---
 
