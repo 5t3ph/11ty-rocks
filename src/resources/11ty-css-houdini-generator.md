@@ -8,6 +8,6 @@ order: 5
 date: 2020-12-15
 ---
 
-[CSS Houdini worklets](https://houdini.how) require a server to run. While there are many ways to create an envirnoment for developing and testing your worklet, as a static site generator, Eleventy provides a slim way to get setup and testing quickly so you can focus on creating your worklet!
+[CSS Houdini worklets](https://houdini.how) require a server to run. While there are many ways to create an environment for developing and testing your worklet, as a static site generator, Eleventy provides a slim way to get setup and testing quickly so you can focus on creating your worklet!
 
 You can preview the included worklet example [on this CodePen](https://codepen.io/5t3ph/pen/NWRpMbv).
