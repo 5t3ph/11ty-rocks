@@ -92,7 +92,6 @@ p {
   line-height: 1.6;
 }
 
-// stylelint-disable
 article {
   > ul,
   > ol {
@@ -120,7 +119,6 @@ article {
     }
   }
 }
-// stylelint-enable
 
 strong {
   font-weight: $tdbc-strong-font-weight;
@@ -160,7 +158,6 @@ blockquote {
   }
 }
 
-// stylelint-disable-next-line no-descending-specificity
 code:not([class*="language"]) {
   display: inline-flex;
   padding: 0.15em;
@@ -171,7 +168,6 @@ code:not([class*="language"]) {
   color: tdbc-color("text");
 }
 
-// stylelint-disable-next-line no-descending-specificity
 pre code:not([class*="language"]) {
   width: 100%;
   max-width: calc(100vw - 2rem);
