@@ -59,15 +59,15 @@ This `.meta` file slots into the data cascade similar to a directory data file, 
 ```text
 posts/
   posts.meta
-  pages.json
-  page-one.md <- content in any templating language
+  posts.json
+  post-one.md <- content in any templating language
 ```
 
-Where `pages.json` is a directory data file that creates the collection via the tags mechanism:
+Where `posts.json` is a directory data file that creates the collection via the tags mechanism:
 
 ```json
 {
-  "tags": "pages"
+  "tags": "posts"
 }
 ```
 

@@ -66,6 +66,20 @@ eleventyConfig.addExtension("scss", {
 });
 ```
 
+## Important: Exclude Custom Template Files from `all` Collection
+
+At this time, any custom template files will end up in `collections.all`. This is very problematic if you are using that collection for things like sitemaps or RSS feeds.
+
+Until Zach decides [which way he wants to address this in core](https://github.com/11ty/eleventy/issues/2854), the quickest fix is to create a directory data file to exclude your Sass (or other custom) files.
+
+Place the following in the directory containing your Sass files. As an example, for a directory called `css` the file would be called `css/css.json`:
+
+```js
+{
+  "eleventyExcludeFromCollections": true
+}
+```
+
 ## Autoprefixing and Minification with LightningCSS
 
 If you are using more modern CSS features, you'll want to at least include prefixing. And for even more support of other upcoming features like nesting, color functions, media query range syntax I encourage using [LightningCSS](https://lightningcss.dev/).
@@ -157,6 +171,8 @@ eleventyConfig.addExtension("css", {
   },
 });
 ```
+
+Don't miss the step to exclude these files from `collections.all` discussed earlier.
 
 > A [plugin to process CSS with LightningCSS](https://github.com/5t3ph/eleventy-plugin-lightningcss) only is also available.
 
