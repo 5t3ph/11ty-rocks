@@ -30,11 +30,11 @@
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "@11ty/eleventy-plugin-webc": "^0.9.4",
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "@11tyrocks/eleventy-plugin-open-in-codepen": "^1.0.0",
     "@11tyrocks/eleventy-plugin-social-images": "^0.4.1",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.15",
     "dotenv": "^16.0.3",
@@ -45,7 +45,7 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "postcss-scss": "^4.0.6",
-    "sass": "^1.58.2"
+    "sass": "^1.59.3"
   },
   "browserslist": [
     "> 0.5%",

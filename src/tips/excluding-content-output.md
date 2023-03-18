@@ -29,19 +29,7 @@ If you want this to apply to an entire collection, you can do this in a [directo
 
 Within a directory intended to be content for a collection, you may have content, such as the index, that you do not want included in the collection itself.
 
-For this, use:
-
-```md
-eleventyExcludeFromCollections: [value of tag for collection]
-```
-
-Or, if you are using [the `all` collection](https://www.11ty.dev/docs/collections/#the-special-all-collection) such as for creating an RSS feed, you may want to exclude some content from being added to that collection:
-
-```md
-eleventyExcludeFromCollections: all
-```
-
-And to _entirely_ exclude the content from _any_ collection, set to `true`:
+To _entirely_ exclude the content from _any_ collection, set `eleventyExcludeFromCollections` to `true`:
 
 ```md
 eleventyExcludeFromCollections: true
