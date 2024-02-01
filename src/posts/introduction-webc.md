@@ -108,7 +108,7 @@ When WebC processes your components and it finds `<style>` or `<script>` tags in
 
 One concern you may have about this single file component approach is that the styles from one component may leak into another. In our `site-footer.webc` component, for example, we have styles that apply to all `<footer>` elements; if we use a `<footer>` in any other part of our site, it will pick up that padding.
 
-A common solution to this problem with SFCs is to scope the styles using some computer-generated unique class name. WebC supports scoped styles via the `webc:scoped` attribute, which you add to your to your `<style>` tag.
+A common solution to this problem with SFCs is to scope the styles using some computer-generated unique class name. WebC supports scoped styles via the `webc:scoped` attribute, which you add to your `<style>` tag.
 
 To scope our footer styles to just the `<site-footer>` element, we can update our component definition like this:
 
