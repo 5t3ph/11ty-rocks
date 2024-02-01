@@ -1,0 +1,6 @@
+{
+  "title": "Dynamically choosing a data file to use in Eleventy templates based on an env variable",
+  "url": "https://www.cassey.dev/posts/2021-11-17-switching-data-file-with-env-11ty/",
+  "yyyy-mm-dd": "2021-11-17",
+  "authorName": "Cassey Lottman"
+}
